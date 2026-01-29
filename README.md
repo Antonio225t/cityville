@@ -25,10 +25,10 @@ This section contains the copyright notice of the infos here:
 The game is copyrighted by Zynga, All Rights Reserved.
 
 ### The server
-The server is from [this repository](https://github.com/SulivanM/CityVille-Reboot) made by [SulivanM](https://github.com/SulivanM/CityVille-Reboot/commits?author=SulivanM) and Captain Rusty (discord) adjusted it to make it work better with the 2011 version. It's also being adjusted by Antonio225 (the author of this repository) to work with the 2013 version of the game. The server's license is Apache-2.0.
+The server is made by Captain Rusty (discord) for the 2011 version. Also being adjusted by Antonio225 (the author of this repository) to work with the 2013 version of the game. The server's license is Apache-2.0.
 
 ## Credits
-* **Server:** [SulivanM](https://github.com/SulivanM/CityVille-Reboot/commits?author=SulivanM), Captain Rusty (discord), Antonio225 (repo author);
+* **Server:** Captain Rusty (discord), Antonio225 (repo author);
 * **Game:** Zynga;
 * **Assets recovery:**
   * xmohamedX1 (discord);
