@@ -1,6 +1,8 @@
 # CityVille
 This is a repository containing the 2013 version of the game (which includes the Downtown, the Lake and other stuff).
 
+To play, you'll need to download [this old browser](https://e.pcloud.link/publink/show?code=XZsHTaZpc9snuqynKymc6VQ9SyQkk8MlQKX)
+
 This is the unstable branch, it has no releases, just new shared patches of the game that aren't guaranteed to be stable. Once they are they'll be marged in the [main](https://github.com/Antonio225t/cityville) branch.
 
 | Version | Download | Tutorial |
