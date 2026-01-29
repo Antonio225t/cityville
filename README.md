@@ -10,6 +10,14 @@ This is the unstable branch, it has no releases, just new shared patches of the 
 | 2011 | [**Download Link**](https://e.pcloud.link/publink/show?code=XZfjfUZmbUzxJKbvp52pbNwpYn5EfufMVsk) | [**Video**](https://e.pcloud.link/publink/show?code=XZBTfUZDvoxS72iexXtaQl26sBsPVMjHN8X)
 | 2013 | No. Check the [unstable branch](https://github.com/Antonio225t/cityville/tree/unstable) | No. |
 
+## On archives and accessibility to digital heritage
+- [Exemption to PCCPSACT](https://www.federalregister.gov/documents/2018/10/26/2018-23241/exemption-to-prohibition-on-circumvention-of-copyright-protection-systems-for-access-control), exemptions to the provision of the Digital Millennium Copyright Act (“DMCA”). 
+- [EFGAMP](https://efgamp.eu/), the European Federation of Video Game Archives, Museums and Preservation projects.
+- [UNESCO PERSIST Programme](https://unescopersist.org/), helps ensure that digital information can continue to be accessed in the future.
+- [The Internet Archive](https://archive.org/), a digital library of Internet sites and other ***tural artifacts in digital form.
+- [BlueMaxima's Flashpoint](https://bluemaxima.org/flashpoint/), the webgame preservation project.
+- [Adobe Flash Player Archive](https://archive.org/download/flashplayerarchive/), the Adobe Inc. archive.org Flash Player Archive.
+
 ## Copyright
 This section contains the copyright notice of the infos here:
 
