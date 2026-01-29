@@ -1,0 +1,43 @@
+*** 22/01/2026 ***
+
+Added (others):
+* Added City Sam (thanks to nidzodzoni on discord)
+
+Added (assets):
+* de_DE.xml
+* es_ES.xml
+* fr_FR.xml
+* it_IT.xml
+* bus_mcd5_zyngage_SE
+* deco_mcd5_zyngage_SE
+* base_tanconcrete_3x6_SE
+* base_tanconcrete_6x4
+* base_tanconcrete_6x6
+* Basketball_Sprite_SE_101x93
+* Basketball_Sprite_SW_58x98
+* deco_courtlight_SE
+* deco_courtlight_SW
+* bus_fastfoodchicken/ (the entire folder)
+* Bandstand_NE_Sprite_73x68
+* Bandstand_NE_Sprite_74x68
+* Bandstand_NW_Sprite_79x66
+* Bandstand_NW_Sprite_80x66
+* deco_bandstand_SW
+* deco_parkpond_NE
+* deco_parkpond_NW
+* deco_parkpond_SE
+* deco_parkpond_SW
+* Fishing_SE_Sprite_89x63
+* Fishing_SW_Sprite_76x63
+* deco_tenniscourt_SE
+* deco_tenniscourt_SW
+* Tennis_SW_Sprite_155x88
+* deco_tennisballs_icon
+* deco_tennisballs_SW
+* deco_tennisbag/ (the entire folder)
+* mun_clinic_SE
+* base_tanconcrete_4x8_SE (created by flipping the SW version)
+
+Added (gameSettings):
+* bus_mcd5_zyngage
+* deco_mcd5_zyngage

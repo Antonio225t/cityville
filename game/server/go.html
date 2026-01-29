@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Cityville 2013</title>
+	<script>
+		function getUserInfo() {
+			console.log("getUserInfo called");
+			//inner_getUserInfo();
+			return {
+				'zid': 333,
+				'uid': 333,
+				'first_name': 'Captain Rusty',
+				'name': 'Captain Rusty',
+				"sex": 'M',
+				'pic_square': 'blank.png'
+			};
+		}
+
+		function getFriendData() {
+			console.log("getFriendData called");
+			// inner_getFriendData();
+			return [];
+		}
+
+		function getAppFriendIds() {
+			console.log("getAppFriendIds called");
+			// inner_getAppFriendIds();
+			return [];
+		}
+
+		function onGameLoaded(seen, popp, canvas) {
+			console.log("Game is loaded " + seen + ", " + popp + ", " + canvas)
+			// inner_onGameLoaded();
+			return;
+		}
+
+		function getAssetOverrides() {
+			console.log("getAssetOverrides called");
+			return {};
+		}
+
+ZYFrameManager = {
+	"reloadApp": function () {
+		console.log("Reload App");
+		window.location.reload();
+		return;
+	},
+	"navigateTo": function (a, b, c) {
+		console.log("Navigate To" + a + " - " + b + " - " + c);
+		return;
+	},
+	"openTab": function (a, b, c) {
+		console.log("Open Tab" + a + " - " + b + " - " + c);
+		return;
+	},
+	"switchToTab": function (a) {
+		console.log("Switch To Tab" + a);
+		return;
+	}
+
+}
+
+	</script>
+		</head>
+	<body>
+	<center>
+	<object data="Game.26346.swf?game_config_url=http://127.0.0.1:5000/gameSettings.xml&quest_url=http://127.0.0.1:5000/questSettings.xml&effects_config_url=http://127.0.0.1:5000/effectsConfig.xml&font_mapper_url=http://127.0.0.1:5000/FontMapper.swf&localization_url=http://127.0.0.1:5000/lang/locale_en_US.swf&bootstrap_config_url=http://127.0.0.1:5000/bootstrap.xml&amf_settings_url=http://127.0.0.1:5000/settings.amf.z&embedded_art_url=http://127.0.0.1:5000/EmbeddedArt.swf&hashed_asset_prefix=http://127.0.0.1:5000&static_asset_prefix=http://127.0.0.1:5000&asset_urls=&versioned_asset_url=&debugMode=true&zySnid=333&zySnuid=333&zyUid=333&app_url=http://127.0.0.1:5000/&app_fb_proxy_url=&flashRevision=26346&asset_url=http://127.0.0.1/&generateSchema=1&sn_app_url=&snapiEnable=1" width="760" height="594" allowFullscreen="true">
+	</object>
+	</center>
+</body>

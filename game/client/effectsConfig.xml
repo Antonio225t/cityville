@@ -1,0 +1,7 @@
+<!--Copyright (c) 2010, Zynga Game Network, Inc.-->
+<effects>
+	<glowFilter name="mouseover1" alpha="1" color="0x00ffff" blurX="8" blurY="8" strength="5"/>
+	<glowFilter name="mouseover2" alpha="1" color="0xff00ff" blurX="8" blurY="8" strength="5"/>
+	<assignment name="wishlistRemove" glowFilter="mouseover1"/>
+	<assignment name="sidebar" glowFilter="mouseover2"/>
+</effects>

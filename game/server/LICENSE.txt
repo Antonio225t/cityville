@@ -1,0 +1,32 @@
+Copyright(c) 2025 Cityville Preservation Team
+
+SCOPE OF THIS LICENSE
+This license applies exclusively to the "Server Code."  All other components of the project, including but not limited to the client software and assets, 
+are expressly excluded from the terms of this license. All rights to such excluded materials are reserved by their respective copyright holders.
+
+PERMISSION GRANT
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to use, copy, modify, 
+and distribute the Software for Non-Commercial Use only, subject to the following conditions:
+
+1. CONDITIONS AND RESTRICTIONS
+
+a. NOTICE
+   This license must be included in all copies or substantial portions of the Software. 
+   You may not remove or alter any copyright or license notices.
+
+b. NON-COMMERCIAL USE ONLY
+   This license grants rights for "Non-Commercial Use" only. "Non-Commercial Use" means any use that is not "Commercial Use."  "Commercial Use" is 
+   defined as any use of the Software for the purpose of direct or indirect financial gain or commercial advantage. For the avoidance 
+   of doubt, the following are considered Commercial Use and are strictly forbidden under this license:
+
+   i.   Selling, leasing, or sublicensing the Software or any part of it.
+   ii.  Using the Software to provide a paid service, or as part of a product or service that is sold or for which a fee is charged.
+   iii. Soliciting or accepting money, donations, or any other form of compensation in exchange for any in-software or in-service benefit. 
+
+2. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS 
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+3. LIMITATION OF LIABILITY
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
