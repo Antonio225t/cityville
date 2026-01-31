@@ -1,0 +1,7 @@
+<!---------------- Auto-Magically created from MAXScript, do not edit ------------------->
+<!-- This should be copied into the "GameSettings.xml" file under the appropriate asset-->
+
+<image className="AnimatedBitmap" numFrames="36" frameWidth="116.0" frameHeight="145.0" fps="30.0" offsetX="28.0" offsetY="-59.0">
+	<RootPoint x="487"	y="388"/>
+	<asset name="lightsBS1001_BirdiesDiner_jump1" url="assets//lightsBS1001_BirdiesDiner_jump1_SW_Anim.png"/>
+</image>

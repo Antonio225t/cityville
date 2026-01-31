@@ -1,0 +1,15 @@
+<!---------------- Auto-Magically created from MAXScript, do not edit ------------------->
+<!-- This should be copied into the "GameSettings.xml" file under the appropriate asset-->
+
+<image name="BS0202_PrecinctOffice" direction="NW" url="assets//BS0202_PrecinctOffice_NW.png">
+	<AnchorPoint_01 x="63.0"	y="75.0"/>
+</image>
+<image name="BS0202_PrecinctOffice" direction="NE" url="assets//BS0202_PrecinctOffice_NE.png">
+	<AnchorPoint_01 x="40.0"	y="4.0"/>
+</image>
+<image name="BS0202_PrecinctOffice" direction="SE" url="assets//BS0202_PrecinctOffice_SE.png">
+	<AnchorPoint_01 x="131.0"	y="16.0"/>
+</image>
+<image name="BS0202_PrecinctOffice" direction="SW" url="assets//BS0202_PrecinctOffice_SW.png">
+	<AnchorPoint_01 x="154.0"	y="71.0"/>
+</image>

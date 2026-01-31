@@ -1,0 +1,6 @@
+<!---------------- Auto-Magically created from MAXScript, do not edit ------------------->
+<!-- This should be copied into the "GameSettings.xml" file under the appropriate asset-->
+
+<image name="tree_xmastreemedl03lights_SW" numFrames="6" frameWidth="83.0" frameHeight="140.0" fps="5.0">
+	<asset url="assets/game/props/tree_xmastreemedl03lights_SW_Anim.png"/>
+</image>

@@ -1,0 +1,19 @@
+<!---------------- Auto-Magically created from MAXScript, do not edit ------------------->
+<!-- This should be copied into the "GameSettings.xml" file under the appropriate asset-->
+
+<image className="AnimatedBitmap" numFrames="31" frameWidth="46.0" frameHeight="41.0" fps="30.0"
+	<RootPoint x="380"	y="380"/>
+	<asset name="char_deliveryVan_Move" url="assets//char_deliveryVan_Move_NW_Anim.png"/>
+</image>
+<image className="AnimatedBitmap" numFrames="31" frameWidth="46.0" frameHeight="41.0" fps="30.0"
+	<RootPoint x="380"	y="380"/>
+	<asset name="char_deliveryVan_Move" url="assets//char_deliveryVan_Move_NE_Anim.png"/>
+</image>
+<image className="AnimatedBitmap" numFrames="31" frameWidth="46.0" frameHeight="42.0" fps="30.0"
+	<RootPoint x="380"	y="380"/>
+	<asset name="char_deliveryVan_Move" url="assets//char_deliveryVan_Move_SE_Anim.png"/>
+</image>
+<image className="AnimatedBitmap" numFrames="31" frameWidth="46.0" frameHeight="42.0" fps="30.0"
+	<RootPoint x="380"	y="380"/>
+	<asset name="char_deliveryVan_Move" url="assets//char_deliveryVan_Move_SW_Anim.png"/>
+</image>

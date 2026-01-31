@@ -588,6 +588,7 @@ def performAction(userId,params):
             item['visits'] = 0
             itemData = items[item['itemName']]
             player = users[userId]['userInfo']['player']
+            print(itemData)
             player['commodities']['storage']['goods'] -= int(itemData['commodityReq'])
             save(userId)
             print('Opened business with id:',resource['id'])
@@ -752,7 +753,7 @@ def inventoryCount(userId,itemName):
 
 def getCollectionByCollectableName(name):
     print("getCollectionByCollectableName")
-    collections = settings['collections'][0]['collection']
+    collections = settings['collections']['collection']
     for collection in collections:
         collectionName = collection['@name']
         for collectable in collection['collectables']['collectable']:

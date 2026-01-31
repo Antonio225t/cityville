@@ -44,6 +44,12 @@ def post_error():
     # print(request.get_json())
     return ''
 
+@app.route('/dataServices.php', methods=['POST'])
+def post_data_services():
+    print("DataService Recieved")
+    print(request.data)
+    return ""
+
 @app.route('/flashservices/gateway.php', methods=['POST'])
 def post_gateway():
     resp_msg = remoting.decode(request.data)        
