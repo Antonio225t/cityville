@@ -1,0 +1,19 @@
+<!---------------- Auto-Magically created from MAXScript, do not edit ------------------->
+<!-- This should be copied into the "GameSettings.xml" file under the appropriate asset-->
+
+<image className="AnimatedBitmap" numFrames="20" frameWidth="106.0" frameHeight="79.0" fps="30.0" offsetX="34.0" offsetY="56.0">
+	<RootPoint x="329"	y="371"/>
+	<asset name="BS0202_PrecinctOffice_Anim" url="assets//BS0202_PrecinctOffice_Anim_NW_Anim.png"/>
+</image>
+<image className="AnimatedBitmap" numFrames="20" frameWidth="73.0" frameHeight="58.0" fps="30.0" offsetX="36.0" offsetY="63.0">
+	<RootPoint x="312"	y="311"/>
+	<asset name="BS0202_PrecinctOffice_Anim" url="assets//BS0202_PrecinctOffice_Anim_NE_Anim.png"/>
+</image>
+<image className="AnimatedBitmap" numFrames="20" frameWidth="92.0" frameHeight="91.0" fps="30.0" offsetX="-30.0" offsetY="85.0">
+	<RootPoint x="430"	y="303"/>
+	<asset name="BS0202_PrecinctOffice_Anim" url="assets//BS0202_PrecinctOffice_Anim_SE_Anim.png"/>
+</image>
+<image className="AnimatedBitmap" numFrames="20" frameWidth="111.0" frameHeight="77.0" fps="30.0" offsetX="-27.0" offsetY="62.0">
+	<RootPoint x="447"	y="362"/>
+	<asset name="BS0202_PrecinctOffice_Anim" url="assets//BS0202_PrecinctOffice_Anim_SW_Anim.png"/>
+</image>

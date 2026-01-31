@@ -1,0 +1,5 @@
+
+<image name="Berthed_ship_Revised1_NW" numFrames="7" frameWidth="177.0" frameHeight="95.0" fps="10.0">
+	<root position="-76.0,123.0"/>
+	<asset url="assets/game/props/Berthed_ship_Revised1_NW_Anim.png"/>
+</image>
