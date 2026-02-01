@@ -1,8 +1,69 @@
 {
-    "idCounter": 1,
+    "idCounter": 53,
     "storageMax": 715,
+	"featureData": {
+		"cityAtNight": {
+			"enabled": false
+		},
+		"remodel": {
+			"enabled": false
+		},
+		"garden": {
+			"enabled": false
+		},
+		"incentivizedExpansions": {
+			"enabled": false
+		},
+		"helperClicks": {
+			"enabled": false
+		},
+		"viralAck": {
+			"enabled": false
+		},
+		"matchup": {
+			"enabled": false
+		},
+		"trickOrTreat": {
+			"enabled": false
+		},
+		"poll": {
+			"enabled": false
+		},
+		"partnerBuild": {
+			"enabled": false
+		},
+		"animalRescue": {},
+		"copsNBandits": {},
+		"downtownpolice": {},
+		"area51": {},
+		"fishing": {},
+		"scratchCard": {},
+		"counter": {},
+		"playerLove": {},
+		"flashxPromo": {},
+		"rewardForSpend": {
+			"version": 0,
+			"versionedData": {
+				"initialAmount": 0,
+				"progress": 0,
+				"targetAmount": 0
+			}
+		},
+		"dynamicItemGateTuning": {},
+		"pumpkinPartnerBuild": {},
+		"challengeGroups": {},
+		"cars": {},
+		"taxis": {},
+		"weather": {},
+		"recentEvents": {}
+	},
     "userInfo": {
         "worldName": "",
+		"world_summary": {
+			"world_main": {
+				"world_id": "world_main"
+			}
+		},
         "is_new": true,
         "firstDay": false,
         "creationTimestamp": 0,
@@ -13,18 +74,23 @@
                 "sfxDisabled": false,
                 "musicDisabled": false
             },
-			"featureData": {},
-            "playerNews": [],
+			"featureData": {
+				"recentEvents": {}
+			},
+			"playerNews": [],
             "gold": 7000,
             "cash": 5,
             "level": 1,
+			"lightLevel": 0,
             "xp": 0,
             "energy": 12,
             "energyMax": 12,
-			"energyPaid": 0,
+			"paidEnergy": 0,
 			"lastEnergyCheck": 0,
 			"m_energyModifiers": [],
             "neighbors": [],
+			"maxNeighbors": 10,
+			"nonSNNeighbors": [],
             "commodities": {
                 "storage": {
                     "goods": 100
@@ -38,13 +104,52 @@
                 "count": 0,
                 "items": {}
             },
+			"expansionCostLevel": null,
+			"flagContainer": [],
             "collections": {},
             "completedCollections": {},
+			"collectionTradeIns": {},
             "licenses": {},
 			"npc_cloud_visible": true,
             "rollCounter": 0,
+			"rollCounterMap": {},
             "socialXp": 0,
-            "socialLevel": 1
+            "socialLevel": 1,
+			"oldLoginTimeStamp": 0,
+			"lastLoginTimeStamp": 0,
+			"regenerableResources": {},
+			"regenerableLastUpdates": {},
+			"requestInventory": null,
+			"storageComponent": null,
+			"subscriptions": {},
+			"timedItem": {},
+			"dailyRewards": {},
+			"franchiseUnlockPurchased": 0,
+			"franchiseMoneyReturned": 0,
+			"hasVisitFriend": 0,
+			"homeIslandSize": 0,
+			"gifts": {},
+			"sentGifts": {},
+			"activeRequests": {},
+			"lastWarpTime": 0,
+			"lastActionTime": 0,
+			"lastLapsedOfflineTime": 0,
+			"dailyVisits": 0,
+			"compensationFlag": 0,
+			"currentBonusDay": 0,
+			"previousBonusDay": 0,
+			"topFriends":[],
+			"playerTimestamps": {},
+			"friendRewards": null,
+			"cupons": [],
+			"associatedCupons": {},
+			"featureThemes": [],
+			"xpromos": {},
+			"geoData": {},
+			"lastSuperFeedPostError": 0,
+			"purchasedSpecials": [],
+			"hasMadeEoQPurchase": false,
+			"autoFillFlags": {}
         },
         "world": {
 			"world_id": "world_main",
@@ -59,9 +164,16 @@
             "sizeX": 36,
             "sizeY": 36,
             "citySim": {
-                "population": 2,
-                "populationCap": 0,
-                "potentialPopulation": 0
+                "segments": {
+					"citizen": {
+						"capacity": 0,
+						"id": "citizen",
+						"maximum": 50,
+						"minimum": 20,
+						"potential": 0,
+						"yield": 20
+					}
+				}
             },
             "objects": [
                 {
@@ -71,9 +183,10 @@
                     "direction": 0,
                     "position": {
                         "x": -2,
-                        "y": 29
+                        "y": 29,
+						"z": 0
                     },
-                    "id": 54000
+                    "id": 1
                 },
                 {
                     "itemName": "plot_crop",
@@ -85,7 +198,7 @@
                         "y": 27,
                         "z": 0
                     },
-                    "id": 54001
+                    "id": 2
                 },
                 {
                     "itemName": "plot_crop",
@@ -97,7 +210,7 @@
                         "y": 25,
                         "z": 0
                     },
-                    "id": 54002                    
+                    "id": 3                    
                 },
                 {
                     "itemName": "plot_crop",
@@ -109,7 +222,7 @@
                         "y": 27,
                         "z": 0
                     },
-                    "id": 54003
+                    "id": 4
                 },
                 {
                     "itemName": "plot_crop",
@@ -121,7 +234,7 @@
                         "y": 25,
                         "z": 0
                     },
-                    "id": 54004
+                    "id": 5
                 },
                 {
                     "position": {
@@ -137,7 +250,7 @@
                     "id": 53000,
                     "state": "static",
                     "tempId": -1,
-                    "id": 54005
+                    "id": 6
                 },
                 {
                     "position": {
@@ -150,7 +263,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53001,
+                    "id": 7,
                     "state": "static",
                     "tempId": -1
                 },
@@ -165,7 +278,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53002,
+                    "id": 8,
                     "state": "static",
                     "tempId": -1
                 },
@@ -180,7 +293,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53003,
+                    "id": 9,
                     "state": "static",
                     "tempId": -1
                 },
@@ -195,7 +308,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53004,
+                    "id": 10,
                     "state": "static",
                     "tempId": -1
                 },
@@ -210,7 +323,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53005,
+                    "id": 11,
                     "state": "static",
                     "tempId": -1
                 },
@@ -225,7 +338,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53006,
+                    "id": 12,
                     "state": "static",
                     "tempId": -1
                 },
@@ -240,7 +353,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53007,
+                    "id": 13,
                     "state": "static",
                     "tempId": -1
                 },
@@ -255,7 +368,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53008,
+                    "id": 14,
                     "state": "static",
                     "tempId": -1
                 },
@@ -270,7 +383,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53009,
+                    "id": 15,
                     "state": "static",
                     "tempId": -1
                 },
@@ -285,7 +398,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53010,
+                    "id": 16,
                     "state": "static",
                     "tempId": -1
                 },
@@ -300,7 +413,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53011,
+                    "id": 17,
                     "state": "static",
                     "tempId": -1
                 },
@@ -315,7 +428,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53012,
+                    "id": 18,
                     "state": "static",
                     "tempId": -1
                 },
@@ -330,7 +443,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53013,
+                    "id": 19,
                     "state": "static",
                     "tempId": -1
                 },
@@ -345,7 +458,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53014,
+                    "id": 20,
                     "state": "static",
                     "tempId": -1
                 },
@@ -360,7 +473,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53015,
+                    "id": 21,
                     "state": "static",
                     "tempId": -1
                 },
@@ -375,7 +488,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53016,
+                    "id": 22,
                     "state": "static",
                     "tempId": -1
                 },
@@ -390,7 +503,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53017,
+                    "id": 23,
                     "state": "static",
                     "tempId": -1
                 },
@@ -405,7 +518,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53018,
+                    "id": 24,
                     "state": "static",
                     "tempId": -1
                 },
@@ -420,7 +533,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53019,
+                    "id": 25,
                     "state": "static",
                     "tempId": -1
                 },
@@ -435,7 +548,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53020,
+                    "id": 26,
                     "state": "static",
                     "tempId": -1
                 },
@@ -450,7 +563,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53021,
+                    "id": 27,
                     "state": "static",
                     "tempId": -1
                 },
@@ -465,7 +578,7 @@
                     "tempId": -1,
                     "className": "LotSite",
                     "components": {},
-                    "id": 53022,
+                    "id": 28,
                     "state": "static"
                 },
                 {
@@ -479,7 +592,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53026,
+                    "id": 29,
                     "state": "static",
                     "tempId": -1
                 },
@@ -494,7 +607,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53027,
+                    "id": 30,
                     "state": "static",
                     "tempId": -1
                 },
@@ -509,7 +622,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53028,
+                    "id": 31,
                     "state": "static",
                     "tempId": -1
                 },
@@ -524,7 +637,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53029,
+                    "id": 32,
                     "state": "static",
                     "tempId": -1
                 },
@@ -539,7 +652,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53030,
+                    "id": 33,
                     "state": "static",
                     "tempId": -1
                 },
@@ -554,7 +667,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53031,
+                    "id": 34,
                     "state": "static",
                     "tempId": -1
                 },
@@ -569,7 +682,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53032,
+                    "id": 35,
                     "state": "static",
                     "tempId": -1
                 },
@@ -584,7 +697,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53033,
+                    "id": 36,
                     "state": "static",
                     "tempId": -1
                 },
@@ -599,7 +712,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53034,
+                    "id": 37,
                     "state": "static",
                     "tempId": -1
                 },
@@ -614,7 +727,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53035,
+                    "id": 38,
                     "state": "static",
                     "tempId": -1
                 },
@@ -629,7 +742,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53036,
+                    "id": 39,
                     "state": "static",
                     "tempId": -1
                 },
@@ -644,7 +757,7 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53037,
+                    "id": 40,
                     "state": "static",
                     "tempId": -1
                 },
@@ -659,7 +772,7 @@
                     "deleted": false,
                     "itemName": "train_tracks_ne",
                     "direction": 0,
-                    "id": 53038,
+                    "id": 41,
                     "state": "static",
                     "tempId": -1
                 },
@@ -674,7 +787,7 @@
                     "deleted": false,
                     "itemName": "train_platform",
                     "direction": 1,
-                    "id": 53047,
+                    "id": 42,
                     "state": "static",
                     "tempId": -1
                 },
@@ -689,7 +802,7 @@
                     "deleted": false,
                     "itemName": "res_ritahouse",
                     "direction": 0,
-                    "id": 53048,
+                    "id": 43,
                     "state": "grown",
                     "tempId": -1
                 },
@@ -705,7 +818,7 @@
                     "tempId": -1,
                     "className": "Decoration",
                     "components": {},
-                    "id": 53049,
+                    "id": 44,
                     "state": "static"
                 },
                 {
@@ -720,7 +833,7 @@
                     "tempId": -1,
                     "className": "Decoration",
                     "components": {},
-                    "id": 53051,
+                    "id": 45,
                     "state": "static"
                 },
                 {
@@ -734,12 +847,12 @@
                     "deleted": false,
                     "itemName": "road-init",
                     "direction": 0,
-                    "id": 53011,
+                    "id": 46,
                     "state": "static",
                     "tempId": -1
                 },
                 {
-                    "id": 53052,
+                    "id": 47,
                     "itemName": "wilderness_21",
                     "className": "Wilderness",
                     "direction": 0,
@@ -751,7 +864,7 @@
                     }
                 },        
                 {
-                    "id": 53053,
+                    "id": 48,
                     "itemName": "wilderness_21",
                     "className": "Wilderness",
                     "direction": 0,
@@ -763,7 +876,7 @@
                     }
                 },        
                 {
-                    "id": 53054,
+                    "id": 49,
                     "itemName": "wilderness_28",
                     "className": "Wilderness",
                     "direction": 0,
@@ -775,7 +888,7 @@
                     }
                 },        
                 {
-                    "id": 53055,
+                    "id": 50,
                     "itemName": "wilderness_21",
                     "className": "Wilderness",
                     "direction": 0,
@@ -787,7 +900,7 @@
                     }
                 },        
                 {
-                    "id": 53056,
+                    "id": 51,
                     "itemName": "wilderness_21",
                     "className": "Wilderness",
                     "direction": 0,
@@ -799,7 +912,7 @@
                     }
                 },        
                 {
-                    "id": 53057,
+                    "id": 52,
                     "itemName": "wilderness_28",
                     "className": "Wilderness",
                     "direction": 0,
