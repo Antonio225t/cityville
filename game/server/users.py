@@ -5,11 +5,12 @@ import math
 from datetime import datetime
 from os import mkdir
 import os.path
+import random
 
 import rand
 
-TEMP_ID_START = 63000
-TEMP_ID_END = 63750
+TEMP_ID_START = 16777217
+TEMP_ID_END = 16781312
 
 settings = {}
 items = {}
@@ -27,10 +28,10 @@ def init():
     users = initUsers()
 
 
-def getPopulation(userId):
+def getPopulation(userId): # TODO: This gets the segments.
     if userId not in users:
         return 0
-    return users[userId]['userInfo']['world']['citySim']['population'] * 10
+    return users[userId]['userInfo']['world']['citySim']
 
 def getGold(userId):
     if userId not in users:
@@ -346,25 +347,50 @@ def collectDoobers(userId,itemName,coinMultiplier = 1):
 
 def recalcPop(worldObjects):
     print('Recalculating Population...')
-    pop = 0
-    for item in worldObjects:
-        itemName = item['itemName']
-        if 'populationYield' in items[itemName]:
-            popYield = items[itemName]['populationYield']
-            pop += 10 * int(popYield)
-    print('Population:',pop)
-    return pop
+    return {
+        "citizen": recalcPopSegment(worldObjects, "citizen")
+        # TODO: Add the other segments
+    }
 
-def recalcPopCap(worldObjects):
-    print('Recalculating Population Limit...')
-    popCap = int(settings['citysim']['populations']["population"][0]['@baseCap']) * 10 # TODO: Adjust the settings['citysim']['populations']["population"][0]['@baseCap']
+def recalcPopSegment(worldObjects, segment):
+    popMin = 0
+    popMax = 120
+    popYield = 0
+    potential = 0 # TODO: Figure out
+    capacity = 0 # TODO: Figure out
+    
     for item in worldObjects:
         itemName = item['itemName']
-        if 'populationCapYield' in items[itemName]:
-            popCapYield = items[itemName]['populationCapYield']
-            popCap += 10 * int(popCapYield)
-    print('Population Limit:',popCap)
-    return popCap
+        itm = items[itemName]
+        if 'population' in itm:
+            if "@min" in itm["population"]:
+                popMin += int(itm["population"]["@min"]) # TODO: Figure out "@min" and "@max"
+                popYield += int(itm["population"]["@min"])
+            
+            if "@cap" in itm["population"]:
+                capacity += int(itm["population"]["@cap"])
+            # popMax = itm["population"]["@max"]
+            # pop += random.randint(int(popMin), int(popMax)) # TODO: Add support for random modifiers (No, it's not like that.)
+    print('Population:',popMin)
+    return {
+        "capacity": capacity,
+        "id": segment,
+        "maximum": popMax,
+        "minimum": popMin,
+        "potential": potential,
+        "yield": popYield
+    }
+
+# def recalcPopCap(worldObjects): # This shouldn't be used anymore...
+#     print('Recalculating Population Limit...')
+#     popCap = int(settings['citysim']['populations']["population"][0]['@baseCap']) * 10 # TODO: Adjust the settings['citysim']['populations']["population"][0]['@baseCap']
+#     for item in worldObjects:
+#         itemName = item['itemName']
+#         if 'populationCapYield' in items[itemName]:
+#             popCapYield = items[itemName]['populationCapYield']
+#             popCap += 10 * int(popCapYield)
+#     print('Population Limit:',popCap)
+#     return popCap
 
 def calcGoodsCapacity(worldObjects):
     print("calcGoodsCapacity")
@@ -411,9 +437,10 @@ def performAction(userId,params):
         print('Placing object')
         name = resource['itemName']
         item = items[name]
+        # objectId = len(worldObjects) + 54000
         if 'construction' in item:
             construction = item['construction']
-            site = createConstructionSite(resource['id'], construction, resource['direction'], name, resource['className'],resource['position'],resource['state'])
+            site = createConstructionSite(resource["id"], construction, resource['direction'], name, resource['className'],resource['position'],resource['state'])
             if 'gates' in item:
                 site['gates'] = createGates(item)
             worldObjects.append(site)
@@ -438,8 +465,8 @@ def performAction(userId,params):
         save(userId)            
         # return {'id': int(objectId)}
     elif action == 'build':
-        objectId = resource['id']
         print('Building object')
+        objectId = resource['id']
         index = getIndexById(worldObjects,objectId)
         if index != -1 and 'builds' in worldObjects[index]:
             print(worldObjects[index])
@@ -471,9 +498,15 @@ def performAction(userId,params):
         if index != -1:
             oldItem = worldObjects[index]       
             print(oldItem)
+            itemName = oldItem["itemName"]
+            className = oldItem["className"]
+            if "targetBuildingName" in oldItem:
+                itemName = oldItem["targetBuildingName"]
+            if "targetBuildingClass" in oldItem:
+                className = oldItem["targetBuildingClass"]
             worldObjects[index] = {
-                'itemName': oldItem['itemName'],
-                'className': oldItem['className'],
+                'itemName': itemName,
+                'className': className,
                 'id': oldItem['id'],
                 'position': oldItem['position'],
                 'direction': oldItem['direction'],
@@ -482,8 +515,8 @@ def performAction(userId,params):
             if oldItem['state'] == 'planted':
                 worldObjects[index]['plantTime'] = timestamp() * 1000
             
-            users[userId]['userInfo']['world']['citySim']['population'] = recalcPop(worldObjects)//10
-            users[userId]['userInfo']['world']['citySim']['populationCap'] = recalcPopCap(worldObjects)//10 
+            users[userId]['userInfo']['world']['citySim']["segments"] = recalcPop(worldObjects)
+            # users[userId]['userInfo']['world']['citySim']['populationCap'] = recalcPopCap(worldObjects)//10 
             users[userId]['storageMax'] = calcGoodsCapacity(worldObjects)
             secureRands = collectDoobers(userId, oldItem['itemName'])
             save(userId)
@@ -506,8 +539,8 @@ def performAction(userId,params):
             name = resource['itemName']
             sellAmount = math.ceil(getCost(name) * 0.05)
             users[userId]['userInfo']['player']['gold'] += sellAmount
-            users[userId]['userInfo']['world']['citySim']['population'] = recalcPop(worldObjects)//10
-            users[userId]['userInfo']['world']['citySim']['populationCap'] = recalcPopCap(worldObjects)//10
+            users[userId]['userInfo']['world']['citySim']["segments"] = recalcPop(worldObjects)
+            # users[userId]['userInfo']['world']['citySim']['populationCap'] = recalcPopCap(worldObjects)//10
             save(userId)
         else:
             print('Object',objectId,'not found')
@@ -522,6 +555,7 @@ def performAction(userId,params):
             users[userId]['userInfo']['player']['energy'] -= 1
             return { 'secureRands': secureRands }
     elif action == 'harvest':
+        print("Harvest")
         className = resource['className']
         coinYield = 0
         energyCost = 0
@@ -582,6 +616,7 @@ def performAction(userId,params):
         users[userId]['userInfo']['player']['gold'] -= cost
         save(userId)
     elif action == 'openBusiness':
+        print("openBusiness")
         item = getObjectById(userId,resource['id'])
         if item != None:
             item['state'] = 'open'
@@ -593,6 +628,7 @@ def performAction(userId,params):
             save(userId)
             print('Opened business with id:',resource['id'])
     else:
+        print("Unknown action of performAction:")
         print(action)
         print(resource)
   
@@ -1300,7 +1336,11 @@ def purchaseCrewMember(userId,params):
         crews[str(objectId)] = ["-1"]
         
     item = getObjectById(userId,objectId)
-    itemData = items[item['itemName']]
+    itemName = item["itemName"]
+    if "targetBuildingName" in item:
+        itemName = item["targetBuildingName"]
+    itemData = items[itemName]
+    print(itemData)
     gate = itemData['gates']['gate'][0] # TODO: Check why items returns a list
     print(gate)
     cash = 1 # technically should be settings\farming\crewMemberCashCost

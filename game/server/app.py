@@ -213,6 +213,12 @@ def post_gateway():
     ret_body = remoting.encode(ev, strict=True, logger=True).getvalue()  # .read()
     return Response(ret_body, mimetype='application/x-amf')
 
+@app.route("/snapi/<path:path>")
+def snapi(path):
+    print("SNAPI get")
+    print(path)
+    return ""
+
 @app.route('/<path:path>')
 def send_sol_assets_alternate(path):
     try:
