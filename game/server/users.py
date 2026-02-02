@@ -31,7 +31,7 @@ def init():
 def getPopulation(userId): # TODO: This gets the segments.
     if userId not in users:
         return 0
-    return users[userId]['userInfo']['world']['citySim']
+    return users[userId]['userInfo']['world']['citySim']["populationSummary"]["segments"]
 
 def getGold(userId):
     if userId not in users:
@@ -190,8 +190,10 @@ def getUser(userId):
     print('Got User',userId)
     
     # partial fix for goods bugs
-    player = users[userId]['userInfo']['player']    
+    player = users[userId]['userInfo']['player']
     worldObjects = users[userId]['userInfo']['world']['objects']
+    # users[userId]['userInfo']['world']["citySim"]["populationSummary"]["segments"] = recalcPop(worldObjects)
+    # save(userId)
     maxGoods = calcGoodsCapacity(worldObjects)
     users[userId]['storageMax'] = maxGoods
     if player['commodities']['storage']['goods'] < 0:
@@ -315,9 +317,35 @@ def giveRewards(userId, rewards, unknown):
                 print(' UNKNOWN REWARD:',item,rewards[item])
     save(userId)
 
-def collectDoobers(userId,itemName,coinMultiplier = 1):
+def getPopulationSetting(id):
+    for pop in settings["citysim"]["populations"]["population"]:
+        if pop["@id"] == id:
+            return pop
+
+def getPopDooberData(userId, objectId):
+    pop = getPopulation(userId)["citizen"]
+    sPop = getPopulationSetting("citizen")
+    iPop = items[getObjectById(userId, objectId)["itemName"]]["population"]
+    
+    res = int(iPop["@max"]) - int(iPop["@min"])
+    
+    if res < 0:
+        return 0
+    
+    yld = pop["yield"]
+    capBase = int(sPop["@baseCap"])
+    if capBase < 1:
+        capBase = 1
+    capBase = pop["capacity"] + capBase
+    pot = pop["potential"]
+    added = capBase - (yld + pot)
+    
+    res = min(res, added)
+    return res
+
+def collectDoobers(userId, itemName, itemId, randomModifierGroupName = None, coinMultiplier = 1):
     print("collectDoobers")
-    doobers,secureRands = rand.generateDoobers(userId,itemName)
+    doobers,secureRands = rand.generateDoobers(userId, itemName, randomModifierGroupName)
     player = users[userId]['userInfo']['player']
 
     for doober in doobers:
@@ -326,7 +354,7 @@ def collectDoobers(userId,itemName,coinMultiplier = 1):
         elif doober[0] != 'collectable':
             doober[1] = int(doober[1])
 
-    print('Collected reward(s): ',doobers)
+    print('Collected reward(s): ', doobers)
     for doober in doobers:
         match doober[0]:
             case 'food' | 'goods':
@@ -341,6 +369,26 @@ def collectDoobers(userId,itemName,coinMultiplier = 1):
                 player['energy'] += int(doober[1])
             case 'collectable':
                 collectionAdd(userId,doober[1])
+            case "population":
+                if int(doober[1]) == 6: # The "6" is the cv_baby_doobers_drop variant that can be found in go.html in "getExperiments"
+                    popn = getPopDooberData(userId, itemId)
+                    if popn < 1:
+                        break
+
+                    iPop = items[getObjectById(userId, itemId)["itemName"]]["population"]
+                    i = 0
+                    res = 0
+                    for dPop in settings["populationDropTable"]["drop"]:
+                        base = int(dPop["@base"])
+                        if int(iPop["@min"]) <= base:
+                            break
+                        res = int(dPop["@drop"])
+                        i += 1
+                        if res > popn:
+                            res = popn
+                            break
+                    print(f"Population add: {res}!")
+                    getObjectById(userId, itemId)["currentPopulation"] += res
             case _:
                 print('UNKNOWN DOOBER:', doober)
     return secureRands
@@ -354,24 +402,30 @@ def recalcPop(worldObjects):
 
 def recalcPopSegment(worldObjects, segment):
     popMin = 0
-    popMax = 120
+    popMax = 120 # This is "settings/citysim/populations/population@baseCap" a few lines after
     popYield = 0
-    potential = 0 # TODO: Figure out
-    capacity = 0 # TODO: Figure out
+    potential = 0
+    capacity = 0
+    
+    for itm in settings['citysim']['populations']["population"]:
+        if itm["@id"] == segment:
+            popMax = int(itm["@baseCap"])
+            break
     
     for item in worldObjects:
-        itemName = item['itemName']
-        itm = items[itemName]
-        if 'population' in itm:
-            if "@min" in itm["population"]:
-                popMin += int(itm["population"]["@min"]) # TODO: Figure out "@min" and "@max"
-                popYield += int(itm["population"]["@min"])
+        # itemName = item['itemName']
+        # itm = items[itemName]
+        if item["className"] == "Residence":
+            increase = int(item["currentPopulation"])
+            popMin += increase
+            popYield += increase
+        elif item["className"] == "Municipal":
+            # itm = items[item["itemName"]]
+            increase = int(item["currentPopulation"])
+            popMax += increase
+            capacity += increase
             
-            if "@cap" in itm["population"]:
-                capacity += int(itm["population"]["@cap"])
-            # popMax = itm["population"]["@max"]
-            # pop += random.randint(int(popMin), int(popMax)) # TODO: Add support for random modifiers (No, it's not like that.)
-    print('Population:',popMin)
+    print(f"Population: {popMin}/{popMax}")
     return {
         "capacity": capacity,
         "id": segment,
@@ -512,13 +566,17 @@ def performAction(userId,params):
                 'direction': oldItem['direction'],
                 'state': oldItem['state']
             }
+            if className == "Residence":
+                worldObjects[index]["currentPopulation"] = int(items[itemName]["population"]["@min"])
+            if className == "Municipal":
+                worldObjects[index]["currentPopulation"] = int(items[itemName]["population"]["@cap"])
             if oldItem['state'] == 'planted':
                 worldObjects[index]['plantTime'] = timestamp() * 1000
             
-            users[userId]['userInfo']['world']['citySim']["segments"] = recalcPop(worldObjects)
+            users[userId]['userInfo']['world']['citySim']["populationSummary"]["segments"] = recalcPop(worldObjects)
             # users[userId]['userInfo']['world']['citySim']['populationCap'] = recalcPopCap(worldObjects)//10 
             users[userId]['storageMax'] = calcGoodsCapacity(worldObjects)
-            secureRands = collectDoobers(userId, oldItem['itemName'])
+            secureRands = collectDoobers(userId, oldItem['itemName'], oldItem["id"])
             save(userId)
     elif action == 'move':
         print('Moving object')
@@ -539,7 +597,7 @@ def performAction(userId,params):
             name = resource['itemName']
             sellAmount = math.ceil(getCost(name) * 0.05)
             users[userId]['userInfo']['player']['gold'] += sellAmount
-            users[userId]['userInfo']['world']['citySim']["segments"] = recalcPop(worldObjects)
+            users[userId]['userInfo']['world']['citySim']["populationSummary"]["segments"] = recalcPop(worldObjects)
             # users[userId]['userInfo']['world']['citySim']['populationCap'] = recalcPopCap(worldObjects)//10
             save(userId)
         else:
@@ -550,7 +608,7 @@ def performAction(userId,params):
         index = getIndexById(worldObjects,objectId)
         if index != -1:
             itemName = worldObjects[index]['itemName']
-            secureRands = collectDoobers(userId,itemName)
+            secureRands = collectDoobers(userId, itemName, objectId)
             del worldObjects[index]
             users[userId]['userInfo']['player']['energy'] -= 1
             return { 'secureRands': secureRands }
@@ -594,17 +652,24 @@ def performAction(userId,params):
 
             # Business coin yields are multiplied by # of visitors
             coinMultiplier = getBonus(userId,resource,'coinYield')
+            randomModifierGroupName = None
             if item['className'] == 'Business':
                 print(params)
                 storeCount = params[3][0] # TODO: Probably needs fixing the [0].
                 coinMultiplier *= storeCount["npcCount"]
-                
-            secureRands = collectDoobers(userId,itemName,coinMultiplier)
+                randomModifierGroupName = "franchise" # TODO: Change this to support businesses with franchises
+            
+            secureRands = collectDoobers(userId, itemName, resource["id"], randomModifierGroupName, coinMultiplier)
+            users[userId]['userInfo']['world']['citySim']["populationSummary"]["segments"] = recalcPop(worldObjects)
+            print(secureRands)
         else:
             print('No Item')
             secureRands = []
         save(userId)
-        return { 'retCoinYield': coinYield , 'secureRands': secureRands }
+        resp = { 'retCoinYield': coinYield, 'secureRands': secureRands, "worldPopulation": getPopulation(userId)["citizen"]["minimum"] } # TODO: Check the getPopulation if it's correct
+        if item != None and (item["className"] == "Residence" or item["className"] == "Municipal"):
+            resp["objectPopulation"] = item["currentPopulation"]
+        return  resp
     elif action == 'startContract':
         print('Starting Contract')
         replaceObjectById(userId,resource['id'],resource)
@@ -1341,7 +1406,9 @@ def purchaseCrewMember(userId,params):
         itemName = item["targetBuildingName"]
     itemData = items[itemName]
     print(itemData)
-    gate = itemData['gates']['gate'][0] # TODO: Check why items returns a list
+    gate = itemData['gates']['gate'] # TODO: Check why items returns a list
+    if type(gate) == list:
+        gate = gate[0]
     print(gate)
     cash = 1 # technically should be settings\farming\crewMemberCashCost
     if '@cashCost' in gate['key']:
@@ -1362,8 +1429,10 @@ def payCash(userId,amount):
 def createGates(itemData):
     print("createGates")
     result = []
-    # print('Create Gates')
-    gateData = itemData['gates']['gate'][0] # TODO: Check why items returns a list
+    print(itemData["gates"]["gate"])
+    gateData = itemData['gates']['gate'] # TODO: Check why items returns a list
+    if type(gateData) == list:
+        gateData = gateData[0]
     if '@type' in gateData and gateData['@type'] == 'crew':
         count = gateData['key']['@amount']
         gate = { 'type': 'crew', 'keys': { 'required_crew' : count } }

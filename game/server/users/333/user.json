@@ -1,70 +1,70 @@
 {
-    "idCounter": 53,
+    "idCounter": 65,
     "storageMax": 715,
-	"featureData": {
-		"cityAtNight": {
-			"enabled": false
-		},
-		"remodel": {
-			"enabled": false
-		},
-		"garden": {
-			"enabled": false
-		},
-		"incentivizedExpansions": {
-			"enabled": false
-		},
-		"helperClicks": {
-			"enabled": false
-		},
-		"viralAck": {
-			"enabled": false
-		},
-		"matchup": {
-			"enabled": false
-		},
-		"trickOrTreat": {
-			"enabled": false
-		},
-		"poll": {
-			"enabled": false
-		},
-		"partnerBuild": {
-			"enabled": false
-		},
-		"animalRescue": {},
-		"copsNBandits": {},
-		"downtownpolice": {},
-		"area51": {},
-		"fishing": {},
-		"scratchCard": {},
-		"counter": {},
-		"playerLove": {},
-		"flashxPromo": {},
-		"rewardForSpend": {
-			"version": 0,
-			"versionedData": {
-				"initialAmount": 0,
-				"progress": 0,
-				"targetAmount": 0
-			}
-		},
-		"dynamicItemGateTuning": {},
-		"pumpkinPartnerBuild": {},
-		"challengeGroups": {},
-		"cars": {},
-		"taxis": {},
-		"weather": {},
-		"recentEvents": {}
-	},
+    "featureData": {
+        "cityAtNight": {
+            "enabled": false
+        },
+        "remodel": {
+            "enabled": false
+        },
+        "garden": {
+            "enabled": false
+        },
+        "incentivizedExpansions": {
+            "enabled": false
+        },
+        "helperClicks": {
+            "enabled": false
+        },
+        "viralAck": {
+            "enabled": false
+        },
+        "matchup": {
+            "enabled": false
+        },
+        "trickOrTreat": {
+            "enabled": false
+        },
+        "poll": {
+            "enabled": false
+        },
+        "partnerBuild": {
+            "enabled": false
+        },
+        "animalRescue": {},
+        "copsNBandits": {},
+        "downtownpolice": {},
+        "area51": {},
+        "fishing": {},
+        "scratchCard": {},
+        "counter": {},
+        "playerLove": {},
+        "flashxPromo": {},
+        "rewardForSpend": {
+            "version": 0,
+            "versionedData": {
+                "initialAmount": 0,
+                "progress": 0,
+                "targetAmount": 0
+            }
+        },
+        "dynamicItemGateTuning": {},
+        "pumpkinPartnerBuild": {},
+        "challengeGroups": {},
+        "cars": {},
+        "taxis": {},
+        "weather": {},
+        "recentEvents": {}
+    },
     "userInfo": {
         "worldName": "",
-		"world_summary": {
-			"world_main": {
-				"world_id": "world_main"
-			}
-		},
-        "is_new": true,
+        "world_summary": {
+            "world_main": {
+                "world_id": "world_main"
+            }
+        },
+        "is_new": false,
         "firstDay": false,
         "creationTimestamp": 0,
         "player": {
@@ -74,29 +74,29 @@
                 "sfxDisabled": false,
                 "musicDisabled": false
             },
-			"featureData": {
-				"recentEvents": {}
-			},
-			"playerNews": [],
-            "gold": 7000,
-            "cash": 5,
-            "level": 1,
-			"lightLevel": 0,
-            "xp": 0,
-            "energy": 12,
-            "energyMax": 12,
-			"paidEnergy": 0,
-			"lastEnergyCheck": 0,
-			"m_energyModifiers": [],
+            "featureData": {
+                "recentEvents": {}
+            },
+            "playerNews": [],
+            "gold": 5435,
+            "cash": 9981,
+            "level": 6,
+            "lightLevel": 0,
+            "xp": 151,
+            "energy": 11,
+            "energyMax": 17,
+            "paidEnergy": 0,
+            "lastEnergyCheck": 1770001500,
+            "m_energyModifiers": [],
             "neighbors": [],
-			"maxNeighbors": 10,
-			"nonSNNeighbors": [],
+            "maxNeighbors": 10,
+            "nonSNNeighbors": [],
             "commodities": {
                 "storage": {
-                    "goods": 100
+                    "goods": 318
                 }
             },
-			"additionalWareHouseSlots": 0,
+            "additionalWareHouseSlots": 0,
             "wishlist": [],
             "seenFlags": {},
             "expansionsPurchased": 0,
@@ -104,55 +104,76 @@
                 "count": 0,
                 "items": {}
             },
-			"expansionCostLevel": null,
-			"flagContainer": [],
-            "collections": {},
+            "expansionCostLevel": null,
+            "flagContainer": [],
+            "collections": {
+                "ruralcollection": {
+                    "diningtable": 1
+                },
+                "justdessertscollection": {
+                    "cupcake": 1,
+                    "danish": 3,
+                    "pie": 1,
+                    "cookie": 1
+                },
+                "strawberrycollection": {
+                    "strawberrysmoothie": 1
+                },
+                "peacefullivingcollection": {
+                    "foldingtable": 3,
+                    "radio": 1,
+                    "birdhouse": 1,
+                    "gardengnome": 2
+                }
+            },
             "completedCollections": {},
-			"collectionTradeIns": {},
-            "licenses": {},
-			"npc_cloud_visible": true,
-            "rollCounter": 0,
-			"rollCounterMap": {},
+            "collectionTradeIns": {},
+            "licenses": {
+                "bus_bakery": 1
+            },
+            "npc_cloud_visible": true,
+            "rollCounter": 658,
+            "rollCounterMap": {},
             "socialXp": 0,
             "socialLevel": 1,
-			"oldLoginTimeStamp": 0,
-			"lastLoginTimeStamp": 0,
-			"regenerableResources": {},
-			"regenerableLastUpdates": {},
-			"requestInventory": null,
-			"storageComponent": null,
-			"subscriptions": {},
-			"timedItem": {},
-			"dailyRewards": {},
-			"franchiseUnlockPurchased": 0,
-			"franchiseMoneyReturned": 0,
-			"hasVisitFriend": 0,
-			"homeIslandSize": 0,
-			"gifts": {},
-			"sentGifts": {},
-			"activeRequests": {},
-			"lastWarpTime": 0,
-			"lastActionTime": 0,
-			"lastLapsedOfflineTime": 0,
-			"dailyVisits": 0,
-			"compensationFlag": 0,
-			"currentBonusDay": 0,
-			"previousBonusDay": 0,
-			"topFriends":[],
-			"playerTimestamps": {},
-			"friendRewards": null,
-			"cupons": [],
-			"associatedCupons": {},
-			"featureThemes": [],
-			"xpromos": {},
-			"geoData": {},
-			"lastSuperFeedPostError": 0,
-			"purchasedSpecials": [],
-			"hasMadeEoQPurchase": false,
-			"autoFillFlags": {}
+            "oldLoginTimeStamp": 0,
+            "lastLoginTimeStamp": 0,
+            "regenerableResources": {},
+            "regenerableLastUpdates": {},
+            "requestInventory": null,
+            "storageComponent": null,
+            "subscriptions": {},
+            "timedItem": {},
+            "dailyRewards": {},
+            "franchiseUnlockPurchased": 0,
+            "franchiseMoneyReturned": 0,
+            "hasVisitFriend": 0,
+            "homeIslandSize": 0,
+            "gifts": {},
+            "sentGifts": {},
+            "activeRequests": {},
+            "lastWarpTime": 0,
+            "lastActionTime": 0,
+            "lastLapsedOfflineTime": 0,
+            "dailyVisits": 0,
+            "compensationFlag": 0,
+            "currentBonusDay": 0,
+            "previousBonusDay": 0,
+            "topFriends": [],
+            "playerTimestamps": {},
+            "friendRewards": null,
+            "cupons": [],
+            "associatedCupons": {},
+            "featureThemes": [],
+            "xpromos": {},
+            "geoData": {},
+            "lastSuperFeedPostError": 0,
+            "purchasedSpecials": [],
+            "hasMadeEoQPurchase": false,
+            "autoFillFlags": {}
         },
         "world": {
-			"world_id": "world_main",
+            "world_id": "world_main",
             "mapRects": [
                 {
                     "x": -24,
@@ -163,21 +184,21 @@
             ],
             "sizeX": 36,
             "sizeY": 36,
-			"citySim": {
-				"populationSummary": {
-					"segments": {
-						"citizen": {
-							"capacity": 0,
-							"id": "citizen",
-							"maximum": 50,
-							"minimum": 20,
-							"potential": 0,
-							"yield": 20
-						}
-					}
-				},
-				"appraisalSummary": {}
-			},
+            "citySim": {
+                "populationSummary": {
+                    "segments": {
+                        "citizen": {
+                            "capacity": 50,
+                            "id": "citizen",
+                            "maximum": 170,
+                            "minimum": 130,
+                            "potential": 0,
+                            "yield": 130
+                        }
+                    }
+                },
+                "appraisalSummary": {}
+            },
             "objects": [
                 {
                     "itemName": "storage_barn",
@@ -187,57 +208,85 @@
                     "position": {
                         "x": -2,
                         "y": 29,
-						"z": 0
+                        "z": 0
                     },
                     "id": 1
                 },
                 {
+                    "tempId": NaN,
+                    "deleted": false,
+                    "contractType": "plot_contract",
                     "itemName": "plot_crop",
                     "className": "Plot",
-                    "contractName": "plot_strawberries",
-                    "state": "grown",
+                    "plantTime": 1769957169258.894,
+                    "buildTime": NaN,
+                    "contractName": "plot_carrots",
+                    "id": 2,
+                    "components": {},
+                    "direction": 0,
                     "position": {
                         "x": -2,
                         "y": 27,
                         "z": 0
                     },
-                    "id": 2
+                    "state": "planted"
                 },
                 {
+                    "tempId": NaN,
+                    "deleted": false,
+                    "contractType": "plot_contract",
                     "itemName": "plot_crop",
                     "className": "Plot",
-                    "contractName": "plot_strawberries",
-                    "state": "grown",
+                    "plantTime": 1769957171270.638,
+                    "buildTime": NaN,
+                    "contractName": "plot_carrots",
+                    "id": 3,
+                    "components": {},
+                    "direction": 0,
                     "position": {
                         "x": -2,
                         "y": 25,
                         "z": 0
                     },
-                    "id": 3                    
+                    "state": "planted"
                 },
                 {
+                    "tempId": NaN,
+                    "deleted": false,
+                    "contractType": "plot_contract",
                     "itemName": "plot_crop",
                     "className": "Plot",
-                    "contractName": "plot_strawberries",
-                    "state": "grown",
+                    "plantTime": 1769957168756.554,
+                    "buildTime": NaN,
+                    "contractName": "plot_carrots",
+                    "id": 4,
+                    "components": {},
+                    "direction": 0,
                     "position": {
                         "x": 0,
                         "y": 27,
                         "z": 0
                     },
-                    "id": 4
+                    "state": "planted"
                 },
                 {
+                    "tempId": NaN,
+                    "deleted": false,
+                    "contractType": "plot_contract",
                     "itemName": "plot_crop",
                     "className": "Plot",
-                    "contractName": "plot_strawberries",
-                    "state": "grown",
+                    "plantTime": 1769957170568.01,
+                    "buildTime": NaN,
+                    "contractName": "plot_carrots",
+                    "id": 5,
+                    "components": {},
+                    "direction": 0,
                     "position": {
                         "x": 0,
                         "y": 25,
                         "z": 0
                     },
-                    "id": 5
+                    "state": "planted"
                 },
                 {
                     "position": {
@@ -250,10 +299,9 @@
                     "deleted": false,
                     "itemName": "road",
                     "direction": 0,
-                    "id": 53000,
+                    "id": 6,
                     "state": "static",
-                    "tempId": -1,
-                    "id": 6
+                    "tempId": -1
                 },
                 {
                     "position": {
@@ -806,9 +854,10 @@
                     "itemName": "res_ritahouse",
                     "direction": 0,
                     "id": 43,
-                    "state": "grown",
+                    "state": "planted",
                     "tempId": -1,
-					"currentPopulation": 30
+                    "plantTime": 1769973436000,
+                    "currentPopulation": 20
                 },
                 {
                     "deleted": false,
@@ -856,79 +905,181 @@
                     "tempId": -1
                 },
                 {
-                    "id": 47,
-                    "itemName": "wilderness_21",
-                    "className": "Wilderness",
-                    "direction": 0,
-                    "state": "static",
+                    "itemName": "res_cottage3",
+                    "className": "Residence",
+                    "id": 53,
                     "position": {
-                        "x": 4,
-                        "y": 24,
+                        "x": -11,
+                        "y": 25,
                         "z": 0
-                    }
-                },        
+                    },
+                    "direction": 1,
+                    "state": "planted",
+                    "plantTime": 1770001528000,
+                    "currentPopulation": 10
+                },
                 {
-                    "id": 48,
-                    "itemName": "wilderness_21",
-                    "className": "Wilderness",
-                    "direction": 0,
-                    "state": "static",
+                    "itemName": "res_cottage3",
+                    "className": "Residence",
+                    "id": 54,
                     "position": {
-                        "x": 3,
+                        "x": -14,
+                        "y": 25,
+                        "z": 0
+                    },
+                    "direction": 1,
+                    "state": "planted",
+                    "plantTime": 1770001528000,
+                    "currentPopulation": 10
+                },
+                {
+                    "itemName": "bus_bakery",
+                    "className": "Business",
+                    "id": 55,
+                    "position": {
+                        "x": -5,
                         "y": 20,
                         "z": 0
-                    }
-                },        
-                {
-                    "id": 49,
-                    "itemName": "wilderness_28",
-                    "className": "Wilderness",
+                    },
                     "direction": 0,
-                    "state": "static",
+                    "state": "closed",
+                    "visits": 0
+                },
+                {
+                    "itemName": "res_cottage3",
+                    "className": "Residence",
+                    "id": 56,
                     "position": {
-                        "x": 5,
-                        "y": 14,
+                        "x": -11,
+                        "y": 19,
                         "z": 0
-                    }
-                },        
+                    },
+                    "direction": 3,
+                    "state": "planted",
+                    "plantTime": 1770001518000,
+                    "currentPopulation": 10
+                },
                 {
-                    "id": 50,
-                    "itemName": "wilderness_21",
-                    "className": "Wilderness",
-                    "direction": 0,
-                    "state": "static",
+                    "itemName": "res_countryhome",
+                    "className": "Residence",
+                    "id": 57,
                     "position": {
-                        "x": -21,
-                        "y": 16,
+                        "x": -18,
+                        "y": 25,
                         "z": 0
-                    }
-                },        
+                    },
+                    "direction": 1,
+                    "state": "planted",
+                    "plantTime": 1770001534000,
+                    "currentPopulation": 40
+                },
                 {
-                    "id": 51,
-                    "itemName": "wilderness_21",
-                    "className": "Wilderness",
-                    "direction": 0,
-                    "state": "static",
+                    "itemName": "res_cottage3",
+                    "className": "Residence",
+                    "id": 58,
                     "position": {
-                        "x": -23,
+                        "x": -14,
+                        "y": 19,
+                        "z": 0
+                    },
+                    "direction": 3,
+                    "state": "planted",
+                    "plantTime": 1770001522000,
+                    "currentPopulation": 10
+                },
+                {
+                    "itemName": "mun_postoffice",
+                    "className": "Municipal",
+                    "id": 59,
+                    "position": {
+                        "x": -5,
+                        "y": 8,
+                        "z": 0
+                    },
+                    "direction": 0,
+                    "state": "planted",
+                    "plantTime": 1770001568000,
+                    "currentPopulation": 50
+                },
+                {
+                    "itemName": "bus_flowerkiosk",
+                    "className": "Business",
+                    "id": 63,
+                    "position": {
+                        "x": -5,
                         "y": 17,
                         "z": 0
-                    }
-                },        
-                {
-                    "id": 52,
-                    "itemName": "wilderness_28",
-                    "className": "Wilderness",
+                    },
                     "direction": 0,
-                    "state": "static",
+                    "state": "open",
+                    "visits": 0
+                },
+                {
+                    "itemName": "res_countryhome",
+                    "className": "Residence",
+                    "id": 64,
                     "position": {
-                        "x": -23,
-                        "y": 15,
+                        "x": -18,
+                        "y": 18,
                         "z": 0
-                    }
-                }        
+                    },
+                    "direction": 3,
+                    "state": "planted",
+                    "currentPopulation": 30,
+                    "plantTime": 1770001524000
+                }
             ]
         }
     },
-    "franchises": []
+    "franchises": [
+        {
+            "name": "bus_bakery",
+            "franchise_name": "Captain Rusty's Bakery",
+            "locations": {},
+            "time_last_collected": 0
+        },
+        {
+            "name": "bus_flowerkiosk",
+            "franchise_name": "Captain Rusty's Flower Kiosk",
+            "locations": {},
+            "time_last_collected": 0
+        }
+    ],
+    "crews": {
+        "59": [
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1"
+        ],
+        "60": [
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1"
+        ],
+        "61": [
+            "-1",
+            "-1",
+            "-1",
+            "-1",
+            "-1"
+        ]
+    }
 }

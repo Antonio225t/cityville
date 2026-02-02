@@ -24,11 +24,11 @@ def rand(userId, min, max):
     return val
 
 
-def generateDoobers(userId,itemName):
+def generateDoobers(userId, itemName, randomModifierGroup=None):
     item = users.items[itemName]
-    return processRandomModifiers(userId, item,'')
+    return processRandomModifiers(userId, item,'', randomModifierGroup)
         
-def processRandomModifiers(userId, item, resource):
+def processRandomModifiers(userId, item, resource, randomModifierGroup=None):
     # TODO: handle bonuses here
 
     dooberTypes = []
@@ -42,24 +42,49 @@ def processRandomModifiers(userId, item, resource):
     if 'goodsYield' in item:
         dooberTypes.append('goods')
         dooberYields.append(item['goodsYield'])
+    if "populationYield" in item:
+        dooberTypes.append("population")
+        dooberYields.append(item["populationYield"])
     
-    # if 'randomModifierGroups' in item:
-    #     xml = chooseRandomModifiersXML(item,,'default')
-    
-    return processRandomModifiersConfig(userId,item,dooberTypes,dooberYields)
-
-def processRandomModifiersConfig(userId, item, dooberTypes, dooberModifiers):
-    result = []
-    secureRands = []
-    print(item)
-    if 'randomModifiers' not in item:
-        return [result,secureRands]
-    modifiersMode = item["randomModifiers"]
-    if type(modifiersMode) is list:
-        modifierModes = modifiersMode
+    randomModifiers = []
+    secureRand = []
+    if 'randomModifierGroups' in item:
+        groups = item["randomModifierGroups"]["group"]
+        if type(groups) != list:
+            groups = [groups]
+        for group in groups:
+            print(randomModifierGroup)
+            if group["@name"] == randomModifierGroup:
+                randModNames = group["modifiers"]
+                if type(randModNames) != list:
+                    randModNames = [randModNames]
+                
+                secureRand = [rand(userId, 0, 99)]
+                prevRollPercent = 0
+                for roll in randModNames:
+                    if '@percent' not in roll:
+                        continue
+                    rollPercent = float(roll['@percent']) + prevRollPercent
+                    prevRollPercent = rollPercent
+                    if secureRand[0] < rollPercent:
+                        for randMod in item["randomModifiers"]:
+                            if randMod["@name"] == roll["@name"]:
+                                randomModifiers = [randMod]
+                                break
     else:
-        modifierModes = [modifiersMode]
-    for modifiers in modifierModes:
+        randomModifiers = item["randomModifiers"]
+        if type(randomModifiers) != list:
+            randomModifiers = [randomModifiers]
+    
+    if len(randomModifiers) < 1:
+        print(f"Error: Random Modifier table is empty, probably coulsn't find the '{randomModifierGroup}' group!")
+    
+    return processRandomModifiersConfig(userId, randomModifiers, dooberTypes, dooberYields, secureRand)
+
+def processRandomModifiersConfig(userId, randomModifiers, dooberTypes, dooberModifiers, secureRands):
+    result = []
+    
+    for modifiers in randomModifiers:
         modifiers = modifiers['modifier']
         if type(modifiers) is list:
             modifiers = modifiers
