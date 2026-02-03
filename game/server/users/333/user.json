@@ -1,5 +1,5 @@
 {
-    "idCounter": 65,
+    "idCounter": 61,
     "storageMax": 715,
     "featureData": {
         "cityAtNight": {
@@ -78,22 +78,22 @@
                 "recentEvents": {}
             },
             "playerNews": [],
-            "gold": 5435,
-            "cash": 9981,
-            "level": 6,
+            "gold": 3437,
+            "cash": 4000,
+            "level": 8,
             "lightLevel": 0,
-            "xp": 151,
-            "energy": 11,
-            "energyMax": 17,
+            "xp": 262,
+            "energy": 16,
+            "energyMax": 19,
             "paidEnergy": 0,
-            "lastEnergyCheck": 1770001500,
+            "lastEnergyCheck": 1770075900,
             "m_energyModifiers": [],
             "neighbors": [],
             "maxNeighbors": 10,
             "nonSNNeighbors": [],
             "commodities": {
                 "storage": {
-                    "goods": 318
+                    "goods": 130
                 }
             },
             "additionalWareHouseSlots": 0,
@@ -106,33 +106,14 @@
             },
             "expansionCostLevel": null,
             "flagContainer": [],
-            "collections": {
-                "ruralcollection": {
-                    "diningtable": 1
-                },
-                "justdessertscollection": {
-                    "cupcake": 1,
-                    "danish": 3,
-                    "pie": 1,
-                    "cookie": 1
-                },
-                "strawberrycollection": {
-                    "strawberrysmoothie": 1
-                },
-                "peacefullivingcollection": {
-                    "foldingtable": 3,
-                    "radio": 1,
-                    "birdhouse": 1,
-                    "gardengnome": 2
-                }
-            },
+            "collections": {},
             "completedCollections": {},
             "collectionTradeIns": {},
             "licenses": {
-                "bus_bakery": 1
+                "res_countryhome": 1
             },
             "npc_cloud_visible": true,
-            "rollCounter": 658,
+            "rollCounter": 52,
             "rollCounterMap": {},
             "socialXp": 0,
             "socialLevel": 1,
@@ -190,10 +171,10 @@
                         "citizen": {
                             "capacity": 50,
                             "id": "citizen",
-                            "maximum": 170,
-                            "minimum": 130,
+                            "maximum": 120,
+                            "minimum": 70,
                             "potential": 0,
-                            "yield": 130
+                            "yield": 70
                         }
                     }
                 },
@@ -213,80 +194,66 @@
                     "id": 1
                 },
                 {
-                    "tempId": NaN,
-                    "deleted": false,
-                    "contractType": "plot_contract",
                     "itemName": "plot_crop",
                     "className": "Plot",
-                    "plantTime": 1769957169258.894,
-                    "buildTime": NaN,
-                    "contractName": "plot_carrots",
-                    "id": 2,
-                    "components": {},
-                    "direction": 0,
+                    "contractName": "plot_strawberries",
+                    "state": "grown",
                     "position": {
                         "x": -2,
                         "y": 27,
                         "z": 0
                     },
-                    "state": "planted"
+                    "id": 2
                 },
                 {
-                    "tempId": NaN,
-                    "deleted": false,
-                    "contractType": "plot_contract",
-                    "itemName": "plot_crop",
-                    "className": "Plot",
-                    "plantTime": 1769957171270.638,
+                    "plantTime": 1770068470063.92,
+                    "state": "planted",
+                    "components": {},
+                    "direction": 0,
                     "buildTime": NaN,
-                    "contractName": "plot_carrots",
+                    "deleted": false,
+                    "tempId": NaN,
                     "id": 3,
-                    "components": {},
-                    "direction": 0,
+                    "contractName": "plot_strawberries",
                     "position": {
                         "x": -2,
                         "y": 25,
                         "z": 0
                     },
-                    "state": "planted"
+                    "itemName": "plot_crop",
+                    "contractType": "plot_contract",
+                    "className": "Plot"
                 },
                 {
-                    "tempId": NaN,
-                    "deleted": false,
-                    "contractType": "plot_contract",
                     "itemName": "plot_crop",
                     "className": "Plot",
-                    "plantTime": 1769957168756.554,
-                    "buildTime": NaN,
-                    "contractName": "plot_carrots",
-                    "id": 4,
-                    "components": {},
-                    "direction": 0,
+                    "contractName": "plot_strawberries",
+                    "state": "grown",
                     "position": {
                         "x": 0,
                         "y": 27,
                         "z": 0
                     },
-                    "state": "planted"
+                    "id": 4
                 },
                 {
-                    "tempId": NaN,
-                    "deleted": false,
-                    "contractType": "plot_contract",
-                    "itemName": "plot_crop",
-                    "className": "Plot",
-                    "plantTime": 1769957170568.01,
-                    "buildTime": NaN,
-                    "contractName": "plot_carrots",
-                    "id": 5,
+                    "plantTime": 1770068469698.345,
+                    "state": "planted",
                     "components": {},
                     "direction": 0,
+                    "buildTime": NaN,
+                    "deleted": false,
+                    "tempId": NaN,
+                    "id": 5,
+                    "contractName": "plot_strawberries",
                     "position": {
                         "x": 0,
                         "y": 25,
                         "z": 0
                     },
-                    "state": "planted"
+                    "itemName": "plot_crop",
+                    "contractType": "plot_contract",
+                    "className": "Plot"
                 },
                 {
                     "position": {
@@ -854,9 +821,8 @@
                     "itemName": "res_ritahouse",
                     "direction": 0,
                     "id": 43,
-                    "state": "planted",
+                    "state": "grown",
                     "tempId": -1,
-                    "plantTime": 1769973436000,
                     "currentPopulation": 20
                 },
                 {
@@ -905,6 +871,78 @@
                     "tempId": -1
                 },
                 {
+                    "id": 47,
+                    "itemName": "wilderness_21",
+                    "className": "Wilderness",
+                    "direction": 0,
+                    "state": "static",
+                    "position": {
+                        "x": 4,
+                        "y": 24,
+                        "z": 0
+                    }
+                },
+                {
+                    "id": 48,
+                    "itemName": "wilderness_21",
+                    "className": "Wilderness",
+                    "direction": 0,
+                    "state": "static",
+                    "position": {
+                        "x": 3,
+                        "y": 20,
+                        "z": 0
+                    }
+                },
+                {
+                    "id": 49,
+                    "itemName": "wilderness_28",
+                    "className": "Wilderness",
+                    "direction": 0,
+                    "state": "static",
+                    "position": {
+                        "x": 5,
+                        "y": 14,
+                        "z": 0
+                    }
+                },
+                {
+                    "id": 50,
+                    "itemName": "wilderness_21",
+                    "className": "Wilderness",
+                    "direction": 0,
+                    "state": "static",
+                    "position": {
+                        "x": -21,
+                        "y": 16,
+                        "z": 0
+                    }
+                },
+                {
+                    "id": 51,
+                    "itemName": "wilderness_21",
+                    "className": "Wilderness",
+                    "direction": 0,
+                    "state": "static",
+                    "position": {
+                        "x": -23,
+                        "y": 17,
+                        "z": 0
+                    }
+                },
+                {
+                    "id": 52,
+                    "itemName": "wilderness_28",
+                    "className": "Wilderness",
+                    "direction": 0,
+                    "state": "static",
+                    "position": {
+                        "x": -23,
+                        "y": 15,
+                        "z": 0
+                    }
+                },
+                {
                     "itemName": "res_cottage3",
                     "className": "Residence",
                     "id": 53,
@@ -915,8 +953,8 @@
                     },
                     "direction": 1,
                     "state": "planted",
-                    "plantTime": 1770001528000,
-                    "currentPopulation": 10
+                    "currentPopulation": 10,
+                    "plantTime": 1770075978000
                 },
                 {
                     "itemName": "res_cottage3",
@@ -929,68 +967,13 @@
                     },
                     "direction": 1,
                     "state": "planted",
-                    "plantTime": 1770001528000,
-                    "currentPopulation": 10
-                },
-                {
-                    "itemName": "bus_bakery",
-                    "className": "Business",
-                    "id": 55,
-                    "position": {
-                        "x": -5,
-                        "y": 20,
-                        "z": 0
-                    },
-                    "direction": 0,
-                    "state": "closed",
-                    "visits": 0
-                },
-                {
-                    "itemName": "res_cottage3",
-                    "className": "Residence",
-                    "id": 56,
-                    "position": {
-                        "x": -11,
-                        "y": 19,
-                        "z": 0
-                    },
-                    "direction": 3,
-                    "state": "planted",
-                    "plantTime": 1770001518000,
-                    "currentPopulation": 10
-                },
-                {
-                    "itemName": "res_countryhome",
-                    "className": "Residence",
-                    "id": 57,
-                    "position": {
-                        "x": -18,
-                        "y": 25,
-                        "z": 0
-                    },
-                    "direction": 1,
-                    "state": "planted",
-                    "plantTime": 1770001534000,
-                    "currentPopulation": 40
-                },
-                {
-                    "itemName": "res_cottage3",
-                    "className": "Residence",
-                    "id": 58,
-                    "position": {
-                        "x": -14,
-                        "y": 19,
-                        "z": 0
-                    },
-                    "direction": 3,
-                    "state": "planted",
-                    "plantTime": 1770001522000,
-                    "currentPopulation": 10
+                    "currentPopulation": 10,
+                    "plantTime": 1770076000000
                 },
                 {
                     "itemName": "mun_postoffice",
                     "className": "Municipal",
-                    "id": 59,
+                    "id": 57,
                     "position": {
                         "x": -5,
                         "y": 8,
@@ -998,35 +981,56 @@
                     },
                     "direction": 0,
                     "state": "planted",
-                    "plantTime": 1770001568000,
-                    "currentPopulation": 50
+                    "currentPopulation": 50,
+                    "plantTime": 1770070583000
                 },
                 {
-                    "itemName": "bus_flowerkiosk",
-                    "className": "Business",
-                    "id": 63,
+                    "deleted": false,
+                    "plantTime": 1770070638445.385,
+                    "itemName": "plot_crop",
+                    "tempId": -1,
+                    "id": 58,
+                    "state": "plowed",
                     "position": {
-                        "x": -5,
-                        "y": 17,
+                        "x": -2,
+                        "y": 23,
                         "z": 0
                     },
                     "direction": 0,
-                    "state": "open",
-                    "visits": 0
+                    "className": "Plot",
+                    "components": {},
+                    "buildTime": 1770070638445.385
+                },
+                {
+                    "deleted": false,
+                    "plantTime": 1770070641413.385,
+                    "itemName": "plot_crop",
+                    "tempId": -1,
+                    "id": 59,
+                    "state": "plowed",
+                    "position": {
+                        "x": 0,
+                        "y": 23,
+                        "z": 0
+                    },
+                    "direction": 2,
+                    "className": "Plot",
+                    "components": {},
+                    "buildTime": 1770070641413.385
                 },
                 {
                     "itemName": "res_countryhome",
                     "className": "Residence",
-                    "id": 64,
+                    "id": 60,
                     "position": {
                         "x": -18,
-                        "y": 18,
+                        "y": 25,
                         "z": 0
                     },
-                    "direction": 3,
+                    "direction": 1,
                     "state": "planted",
                     "currentPopulation": 30,
-                    "plantTime": 1770001524000
+                    "plantTime": 1770076000000
                 }
             ]
         }
@@ -1037,49 +1041,6 @@
             "franchise_name": "Captain Rusty's Bakery",
             "locations": {},
             "time_last_collected": 0
-        },
-        {
-            "name": "bus_flowerkiosk",
-            "franchise_name": "Captain Rusty's Flower Kiosk",
-            "locations": {},
-            "time_last_collected": 0
         }
-    ],
-    "crews": {
-        "59": [
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1"
-        ],
-        "60": [
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1"
-        ],
-        "61": [
-            "-1",
-            "-1",
-            "-1",
-            "-1",
-            "-1"
-        ]
-    }
+    ]
 }

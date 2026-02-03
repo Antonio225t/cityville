@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<craftingCollections>
+	<collection name="cc_car_rustytruck">
+		<droptable table="car_rustytruckcrafting" keyword="cars"/>
+
+		<collectable name="cp_woodpanel" quantity="6"/>
+		<collectable name="cp_whitewall_tires" quantity="6"/>
+		<collectable name="cp_side_mirror" quantity="5"/>
+		<collectable name="cp_custom_paintjob" quantity="5"/>
+		<collectable name="cp_roll_bar" quantity="5"/>
+
+		<tradeInReward>
+			<item name="car_rustytruck" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_lazzari_white">
+		<droptable table="car_lazzari_whitecrafting" keyword="cars"/>
+
+		<collectable name="cp_gearshift" quantity="12"/>
+		<collectable name="cp_car_clutch" quantity="12"/>
+		<collectable name="cp_leather_seats" quantity="10"/>
+		<collectable name="cp_floor_mats" quantity="10"/>
+		<collectable name="cp_rearviewmirror" quantity="10"/>
+
+		<tradeInReward>
+			<item name="car_lazzari_white" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_jag_red">
+		<droptable table="car_jag_redcrafting" keyword="cars"/>
+
+		<collectable name="cp_muffler" quantity="9"/>
+		<collectable name="cp_performance_tires" quantity="9"/>
+		<collectable name="cp_leather_seats" quantity="9"/>
+		<collectable name="cp_floor_mats" quantity="9"/>
+		<collectable name="cp_rearviewmirror" quantity="9"/>
+
+		<tradeInReward>
+			<item name="car_jag_red" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_solarcar">
+		<droptable table="car_solarcarcrafting" keyword="cars"/>
+
+		<collectable name="cp_carbattery" quantity="8"/>
+		<collectable name="cp_car_dashboarddisplay" quantity="8"/>
+		<collectable name="cp_car_stereo" quantity="8"/>
+		<collectable name="cp_solarpanel" quantity="8"/>
+		<collectable name="cp_compact_tires" quantity="8"/>
+
+		<tradeInReward>
+			<item name="car_solarcar" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_bigdeltruck">
+		<droptable table="car_bigdeltruckcrafting" keyword="cars"/>
+
+		<collectable name="cp_runningboard" quantity="6"/>
+		<collectable name="cp_car_crates" quantity="6"/>
+		<collectable name="cp_truck_lights" quantity="6"/>
+		<collectable name="cp_sparewheel" quantity="6"/>
+		<collectable name="cp_side_mirror" quantity="6"/>
+
+		<tradeInReward>
+			<item name="car_bigdeltruck" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_spanishrally">
+		<droptable table="spanishrallycrafting" keyword="cars"/>
+
+		<collectable name="cp_sponsor_decal" quantity="10"/>
+		<collectable name="cp_racing_harness" quantity="10"/>
+		<collectable name="cp_roll_bar" quantity="9"/>
+		<collectable name="cp_sparewheel" quantity="9"/>
+		<collectable name="cp_racingwheel" quantity="9"/>
+
+		<tradeInReward>
+			<item name="car_spanishrally" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_spanishsedan">
+		<droptable table="spanishsedancrafting" keyword="cars"/>
+
+		<collectable name="cp_bumper" quantity="6"/>
+		<collectable name="cp_car_canopy" quantity="6"/>
+		<collectable name="cp_compact_tires" quantity="7"/>
+		<collectable name="cp_floor_mats" quantity="7"/>
+		<collectable name="cp_side_mirror" quantity="7"/>
+
+		<tradeInReward>
+			<item name="car_spanishsedan" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_limo">
+		<droptable table="limocrafting" keyword="cars"/>
+
+		<collectable name="cp_car_video_screen" quantity="11"/>
+		<collectable name="cp_whitewall_tires" quantity="11"/>
+		<collectable name="cp_tinted_windows" quantity="9"/>
+		<collectable name="cp_entertainment_center" quantity="9"/>
+		<collectable name="cp_sparewheel" quantity="9"/>
+
+		<tradeInReward>
+			<item name="car_limo" amount="5"/>
+		</tradeInReward>
+	</collection>
+		
+	<collection name="cc_car_lazzari">
+		<droptable table="lazzaricrafting" keyword="cars"/>
+
+		<collectable name="cp_bucket_seats" quantity="12"/>
+		<collectable name="cp_performance_tires" quantity="12"/>
+		<collectable name="cp_racingwheel" quantity="10"/>
+		<collectable name="cp_spoiler" quantity="10"/>
+		<collectable name="cp_customgrill" quantity="10"/>
+
+		<tradeInReward>
+			<item name="car_lazzari" amount="5"/>
+		</tradeInReward>
+	</collection>
+	
+	<collection name="cc_car_convertible">
+		<droptable table="convertiblecrafting" keyword="cars"/>
+
+		<collectable name="cp_gps_system" quantity="7"/>
+		<collectable name="cp_chrome_rims" quantity="7"/>
+		<collectable name="cp_car_stereo" quantity="8"/>
+		<collectable name="cp_convertible_top" quantity="8"/>
+		<collectable name="cp_car_alarm" quantity="8"/>
+
+		<tradeInReward>
+			<item name="car_convertible" amount="5"/>
+		</tradeInReward>
+	</collection>
+	
+	<collection name="cc_car_pinkcvbus">
+		<droptable table="pinkcvbuscrafting" keyword="cars"/>
+
+		<collectable name="cp_car_radio" quantity="5"/>
+		<collectable name="cp_antenna_ornament" quantity="5"/>
+		<collectable name="cp_car_decal" quantity="6"/>
+		<collectable name="cp_custom_paintjob" quantity="6"/>
+		<collectable name="cp_vanity_plate" quantity="6"/>
+
+		<tradeInReward>
+			<item name="car_pinkcvbus" amount="5"/>
+		</tradeInReward>
+	</collection>
+	
+	<collection name="cc_car_phoenix">
+		<droptable table="phoenixcrafting" keyword="cars"/>
+
+		<collectable name="cp_bucket_seats" quantity="11"/>
+		<collectable name="cp_ignition_button" quantity="11"/>
+		<collectable name="cp_car_stereo" quantity="8"/>
+		<collectable name="cp_gull_wing_doors" quantity="8"/>
+		<collectable name="cp_car_alarm" quantity="8"/>
+
+		<tradeInReward>
+			<item name="car_phoenix" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_glacier">
+		<droptable table="glaciercrafting" keyword="cars"/>
+
+		<collectable name="cp_plow" quantity="10"/>
+		<collectable name="cp_snow_tires" quantity="10"/>
+		<collectable name="cp_truck_lights" quantity="8"/>
+		<collectable name="cp_chrome_bumper" quantity="8"/>
+		<collectable name="cp_car_decal" quantity="6"/>
+
+		<tradeInReward>
+			<item name="car_glacier" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_exemplar">
+		<droptable table="exemplarcrafting" keyword="cars"/>
+
+		<collectable name="cp_gps_system" quantity="6"/>
+		<collectable name="cp_chrome_rims" quantity="6"/>
+		<collectable name="cp_leather_seats" quantity="6"/>
+		<collectable name="cp_floor_mats" quantity="6"/>
+		<collectable name="cp_car_alarm" quantity="6"/>
+
+		<tradeInReward>
+			<item name="car_exemplar" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_pedigree">
+		<droptable table="pedigreecrafting" keyword="cars"/>
+
+		<collectable name="cp_air_conditioning" quantity="5"/>
+		<collectable name="cp_dent_resistant_doors" quantity="5"/>
+		<collectable name="cp_compact_tires" quantity="5"/>
+		<collectable name="cp_car_stereo" quantity="5"/>
+		<collectable name="cp_university_plate_frame" quantity="5"/>
+
+		<tradeInReward>
+			<item name="car_pedigree" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_cvbus">
+		<droptable table="cvbuscrafting" keyword="cars"/>
+
+		<collectable name="cp_air_conditioning" quantity="5"/>
+		<collectable name="cp_antenna_ornament" quantity="5"/>
+		<collectable name="cp_leather_seats" quantity="5"/>
+		<collectable name="cp_car_decal" quantity="5"/>
+		<collectable name="cp_vanity_plate" quantity="5"/>
+
+		<tradeInReward>
+			<item name="car_cvbus" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_torque">
+		<droptable table="torquecrafting" keyword="cars"/>
+		
+		<collectable name="cp_gps_system" quantity="6"/>
+		<collectable name="cp_performance_tires" quantity="6"/>
+		<collectable name="cp_leather_seats" quantity="6"/>
+		<collectable name="cp_tinted_windows" quantity="6"/>
+		<collectable name="cp_hood_ornament" quantity="6"/>
+
+		<tradeInReward>
+			<item name="car_torque" amount="5"/>
+		</tradeInReward>
+	</collection>
+	
+	<collection name="cc_car_scorch">
+		<droptable table="scorchcrafting" keyword="cars"/>
+		
+		<collectable name="cp_bucket_seats" quantity="7"/>
+		<collectable name="cp_performance_tires" quantity="7"/>
+		<collectable name="cp_car_stereo" quantity="7"/>
+		<collectable name="cp_spoiler" quantity="7"/>
+		<collectable name="cp_hood_ornament" quantity="7"/>
+
+		<tradeInReward>
+			<item name="car_scorch" amount="5"/>
+		</tradeInReward>
+	</collection>
+
+	<collection name="cc_car_draculacarriage">
+		<droptable table="scorchcrafting" keyword="cars"/>
+		
+		<collectable name="cp_bucket_seats" quantity="7"/>
+		<collectable name="cp_performance_tires" quantity="7"/>
+		<collectable name="cp_car_stereo" quantity="7"/>
+		<collectable name="cp_spoiler" quantity="7"/>
+		<collectable name="cp_hood_ornament" quantity="7"/>
+
+		<tradeInReward>
+			<item name="car_draculacarriage" amount="5"/>
+		</tradeInReward>
+	</collection>
+	
+	<collection name="cc_car_policemotorcycle">
+		<droptable table="policemotorcyclecrafting" keyword="cars"/>
+		
+		<collectable name="cp_motorcycle_seat" quantity="14"/>
+		<collectable name="cp_police_decal" quantity="14"/>
+		<collectable name="cp_police_radio" quantity="10"/>
+		<collectable name="cp_car_alarm" quantity="10"/>
+		<collectable name="cp_custom_paintjob" quantity="10"/>
+
+		<tradeInReward>
+			<item name="car_policemotorcycle" amount="5"/>
+		</tradeInReward>
+	</collection>
+</craftingCollections>

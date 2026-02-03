@@ -24,11 +24,17 @@ def rand(userId, min, max):
     return val
 
 
-def generateDoobers(userId, itemName, randomModifierGroup=None):
-    item = users.items[itemName]
-    return processRandomModifiers(userId, item,'', randomModifierGroup)
+def generateDoobers(userId, action, resource, randomModifierGroup=None):
+    item = None
+    
+    if resource["className"] == "Plot":
+        item = users.items[resource["contractName"]]
+    else:
+        item = users.items[resource["itemName"]]
+    
+    return processRandomModifiers(userId, action, item, resource, randomModifierGroup)
         
-def processRandomModifiers(userId, item, resource, randomModifierGroup=None):
+def processRandomModifiers(userId, action, item, resource, randomModifierGroup=None):
     # TODO: handle bonuses here
 
     dooberTypes = []
@@ -72,6 +78,7 @@ def processRandomModifiers(userId, item, resource, randomModifierGroup=None):
                                 randomModifiers = [randMod]
                                 break
     else:
+        print(item)
         randomModifiers = item["randomModifiers"]
         if type(randomModifiers) != list:
             randomModifiers = [randomModifiers]
@@ -79,59 +86,76 @@ def processRandomModifiers(userId, item, resource, randomModifierGroup=None):
     if len(randomModifiers) < 1:
         print(f"Error: Random Modifier table is empty, probably coulsn't find the '{randomModifierGroup}' group!")
     
-    return processRandomModifiersConfig(userId, randomModifiers, dooberTypes, dooberYields, secureRand)
+    return processRandomModifiersConfig(userId, action, item, resource, randomModifiers, dooberTypes, dooberYields, secureRand)
 
-def processRandomModifiersConfig(userId, randomModifiers, dooberTypes, dooberModifiers, secureRands):
+def processRandomModifiersConfig(userId, action, item, resource, randomModifiers, dooberTypes, dooberModifiers, secureRands):
     result = []
     
-    for modifiers in randomModifiers:
-        modifiers = modifiers['modifier']
-        if type(modifiers) is list:
-            modifiers = modifiers
+    modifiers = []
+    for nmodifiers in randomModifiers:
+        nmodifiers = nmodifiers["modifier"]
+        if type(nmodifiers) is list:
+            nmodifiers = nmodifiers
         else:
-            modifiers = [modifiers]
-        for modifier in modifiers:
+            nmodifiers = [nmodifiers]
+        if resource["className"] == "ConstructionSite" and resource["stage"] != int(item["numberOfStages"]):
+            for modifier in nmodifiers:
+                print(modifier)
+                
+                if modifier["@type"] == "xp" or ("@allowOnBuild" in modifier and modifier["@allowOnBuild"] == "true"):
+                    modifiers.append(modifier)
+        else:
+            modifiers.extend(nmodifiers)
+    
+
+    for modifier in modifiers:
+        if action == "finish" and modifier["@type"] == "collectable":
+            continue # If we're finishing a building, the collectable doobers aren't being processed.
+        if action == "build" and resource["targetBuildingClass"] == "Business":
             secureRand = rand(userId,0,99)
-            secureRands.append(secureRand)
-            
-            print("Modifier:")
-            print(modifier)
-            if modifier['@tableName'] == 'colltable': # No collectables for this item
-                continue            
-            if modifier['@tableName'] not in users.randomTables:
-                print('Missing random table:',modifier['@tableName'])
+            secureRands.append(secureRand) # This is a temporary fix for this: Basically when building a business, it runs "rand()" twice for every build (besides finish), for example it looks like it stores 2 xp but that's not true.
+        
+        secureRand = rand(userId,0,99)
+        secureRands.append(secureRand)
+        
+        print("Modifier:")
+        print(modifier)
+        if modifier['@tableName'] == 'colltable': # No collectables for this item
+            continue            
+        if modifier['@tableName'] not in users.randomTables:
+            print('Missing random table:',modifier['@tableName'])
+            continue
+        modifierTable = users.randomTables[modifier['@tableName']]
+        itemType = modifierTable['@type']
+        rolls = []
+        if type(modifierTable['roll']) is list:
+            rolls = modifierTable['roll']
+        else:
+            rolls.append(modifierTable['roll'])
+        
+        prevRollPercent = 0
+        for roll in rolls:
+            # print(roll)
+            if '@percent' not in roll:
                 continue
-            modifierTable = users.randomTables[modifier['@tableName']]
-            itemType = modifierTable['@type']
-            rolls = []
-            if type(modifierTable['roll']) is list:
-                rolls = modifierTable['roll']
-            else:
-                rolls.append(modifierTable['roll'])
-            
-            prevRollPercent = 0
-            for roll in rolls:
-                # print(roll)
-                if '@percent' not in roll:
-                    continue
-                rollPercent = float(roll['@percent']) + prevRollPercent
-                prevRollPercent = rollPercent
-                if secureRand < rollPercent:
-                    if type(roll[itemType]) is list:
-                        items = roll[itemType]
+            rollPercent = float(roll['@percent']) + prevRollPercent
+            prevRollPercent = rollPercent
+            if secureRand < rollPercent:
+                if type(roll[itemType]) is list:
+                    items = roll[itemType]
+                else:
+                    items = [roll[itemType]]
+                for item in items:
+                    print(roll)
+                    print(item)
+                    if itemType == 'collectable':
+                        dooberType = 'collectable'
+                        quantity = item['@name']
                     else:
-                        items = [roll[itemType]]
-                    for item in items:
-                        print(roll)
-                        print(item)
-                        if itemType == 'collectable':
-                            dooberType = 'collectable'
-                            quantity = item['@name']
-                        else:
-                            dooberType = itemType
-                            quantity = float(item['@amount']) if "@amount" in item else 1
-                        result.append([dooberType,quantity])
-                    break;
+                        dooberType = itemType
+                        quantity = float(item['@amount']) if "@amount" in item else 1
+                    result.append([dooberType,quantity])
+                break;
     return [result,secureRands]
             
 
