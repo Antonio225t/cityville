@@ -343,9 +343,9 @@ def getPopDooberData(userId, objectId):
     res = min(res, added)
     return res
 
-def collectDoobers(userId, itemName, itemId, randomModifierGroupName = None, coinMultiplier = 1):
+def collectDoobers(userId, action, resource, randomModifierGroupName = None, coinMultiplier = 1):
     print("collectDoobers")
-    doobers,secureRands = rand.generateDoobers(userId, itemName, randomModifierGroupName)
+    doobers,secureRands = rand.generateDoobers(userId, action, resource, randomModifierGroupName)
     player = users[userId]['userInfo']['player']
 
     for doober in doobers:
@@ -355,6 +355,7 @@ def collectDoobers(userId, itemName, itemId, randomModifierGroupName = None, coi
             doober[1] = int(doober[1])
 
     print('Collected reward(s): ', doobers)
+    print("Secure Rands:", secureRands)
     for doober in doobers:
         match doober[0]:
             case 'food' | 'goods':
@@ -371,24 +372,29 @@ def collectDoobers(userId, itemName, itemId, randomModifierGroupName = None, coi
                 collectionAdd(userId,doober[1])
             case "population":
                 if int(doober[1]) == 6: # The "6" is the cv_baby_doobers_drop variant that can be found in go.html in "getExperiments"
-                    popn = getPopDooberData(userId, itemId)
+                    popn = getPopDooberData(userId, resource["id"])
+                    print(popn)
                     if popn < 1:
                         break
-
-                    iPop = items[getObjectById(userId, itemId)["itemName"]]["population"]
+                    
+                    iPop = items[resource["itemName"]]["population"]
                     i = 0
                     res = 0
+                    print(res)
                     for dPop in settings["populationDropTable"]["drop"]:
                         base = int(dPop["@base"])
+                        print(base)
                         if int(iPop["@min"]) <= base:
                             break
                         res = int(dPop["@drop"])
+                        print(res)
                         i += 1
                         if res > popn:
                             res = popn
                             break
                     print(f"Population add: {res}!")
-                    getObjectById(userId, itemId)["currentPopulation"] += res
+                    resource["currentPopulation"] += res
+                    users[userId]['userInfo']['world']['citySim']["populationSummary"]["segments"] = recalcPop(worldObjects)
             case _:
                 print('UNKNOWN DOOBER:', doober)
     return secureRands
@@ -402,28 +408,32 @@ def recalcPop(worldObjects):
 
 def recalcPopSegment(worldObjects, segment):
     popMin = 0
-    popMax = 120 # This is "settings/citysim/populations/population@baseCap" a few lines after
+    popMax = 0 # This is "settings/citysim/populations/population@baseCap" a few lines after
     popYield = 0
     potential = 0
     capacity = 0
     
-    for itm in settings['citysim']['populations']["population"]:
-        if itm["@id"] == segment:
-            popMax = int(itm["@baseCap"])
-            break
+    # for itm in settings['citysim']['populations']["population"]:
+    #     if itm["@id"] == segment:
+    #         popMax = int(itm["@baseCap"])
+    #         break
     
     for item in worldObjects:
         # itemName = item['itemName']
         # itm = items[itemName]
         if item["className"] == "Residence":
-            increase = int(item["currentPopulation"])
+            increase = item["currentPopulation"]
             popMin += increase
             popYield += increase
+            popMax += int(items[item["itemName"]]["population"]["@max"])
         elif item["className"] == "Municipal":
-            # itm = items[item["itemName"]]
-            increase = int(item["currentPopulation"])
-            popMax += increase
+            itm = items[item["itemName"]]
+            increase = int(itm["population"]["@cap"])
             capacity += increase
+        elif item["className"] == "ConstructionSite":
+            if item["targetBuildingClass"] == "Residence":
+                itm = items[item["targetBuildingName"]]
+                potential += int(itm["population"]["@min"])
             
     print(f"Population: {popMin}/{popMax}")
     return {
@@ -534,12 +544,14 @@ def performAction(userId,params):
             player['energy'] -= 1
             print('Current Stage:',stage,'of',totalStages)  
             if stage != totalStages:
-                target = worldObjects[index]['itemName']
-                doobers,secureRands = rand.generateDoobers(userId,target)
-                for i in doobers:
-                    if i[0] == 'xp':
-                        player = users[userId]['userInfo']['player']
-                        player['xp'] += int(i[1])
+                resource = worldObjects[index]
+                secureRands = collectDoobers(userId, action, resource)
+                # target = worldObjects[index]['itemName']
+                # doobers,secureRands = rand.generateDoobers(userId, target)
+                # for i in doobers:
+                #     if i[0] == 'xp':
+                #         player = users[userId]['userInfo']['player']
+                #         player['xp'] += int(i[1])
             elif 'gates' in worldObjects[index]:
                 worldObjects[index]['currentState'] = 2 # STATE_AT_GATE
             save(userId)
@@ -576,7 +588,7 @@ def performAction(userId,params):
             users[userId]['userInfo']['world']['citySim']["populationSummary"]["segments"] = recalcPop(worldObjects)
             # users[userId]['userInfo']['world']['citySim']['populationCap'] = recalcPopCap(worldObjects)//10 
             users[userId]['storageMax'] = calcGoodsCapacity(worldObjects)
-            secureRands = collectDoobers(userId, oldItem['itemName'], oldItem["id"])
+            secureRands = collectDoobers(userId, action, oldItem)
             save(userId)
     elif action == 'move':
         print('Moving object')
@@ -607,8 +619,8 @@ def performAction(userId,params):
         objectId = resource['id']
         index = getIndexById(worldObjects,objectId)
         if index != -1:
-            itemName = worldObjects[index]['itemName']
-            secureRands = collectDoobers(userId, itemName, objectId)
+            resource = worldObjects[index]
+            secureRands = collectDoobers(userId, action, resource)
             del worldObjects[index]
             users[userId]['userInfo']['player']['energy'] -= 1
             return { 'secureRands': secureRands }
@@ -657,17 +669,18 @@ def performAction(userId,params):
                 print(params)
                 storeCount = params[3][0] # TODO: Probably needs fixing the [0].
                 coinMultiplier *= storeCount["npcCount"]
-                randomModifierGroupName = "franchise" # TODO: Change this to support businesses with franchises
+                randomModifierGroupName = "default" # TODO: Change this to support businesses with franchises
+            elif item["className"] == "Residence":
+                pass
             
-            secureRands = collectDoobers(userId, itemName, resource["id"], randomModifierGroupName, coinMultiplier)
-            users[userId]['userInfo']['world']['citySim']["populationSummary"]["segments"] = recalcPop(worldObjects)
+            secureRands = collectDoobers(userId, action, resource, randomModifierGroupName, coinMultiplier)
             print(secureRands)
         else:
             print('No Item')
             secureRands = []
         save(userId)
-        resp = { 'retCoinYield': coinYield, 'secureRands': secureRands, "worldPopulation": getPopulation(userId)["citizen"]["minimum"] } # TODO: Check the getPopulation if it's correct
-        if item != None and (item["className"] == "Residence" or item["className"] == "Municipal"):
+        resp = { 'retCoinYield': coinYield, 'secureRands': secureRands, "worldPopulation": getPopulation(userId)["citizen"]["minimum"] }
+        if item != None and item["className"] == "Residence":
             resp["objectPopulation"] = item["currentPopulation"]
         return  resp
     elif action == 'startContract':

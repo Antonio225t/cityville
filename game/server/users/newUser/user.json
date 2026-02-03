@@ -169,7 +169,7 @@
 						"citizen": {
 							"capacity": 0,
 							"id": "citizen",
-							"maximum": 50,
+							"maximum": 30,
 							"minimum": 20,
 							"potential": 0,
 							"yield": 20
@@ -808,7 +808,7 @@
                     "id": 43,
                     "state": "grown",
                     "tempId": -1,
-					"currentPopulation": 30
+					"currentPopulation": 20
                 },
                 {
                     "deleted": false,

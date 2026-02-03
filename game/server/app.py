@@ -8,6 +8,8 @@ import os.path
 import users
 import quests
 
+
+
 writeStats = False
 CLIENT_DIR = '../client'
 
