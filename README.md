@@ -15,6 +15,11 @@ Join [this discord server](https://discord.gg/xrNE6Hg), you can find us at the *
 
 If you have an old PC that you used to play CityVille on back in the days, you can download [this script](https://discord.com/channels/536575691563466772/927596177774493766/1448450792603389975) in the discord server and run it on that old PC, then share the extracted assets with the community to help preserve more of this amazing game, thank you for your contribution \:D
 
+## How to run
+
+1. Check and download the [latest release](https://github.com/Antonio225t/cityville/releases) (if there are none, clone this repo);
+2. If you already have Flash, Python and the required dependencies for running the server (you can manually install the Python dependecies by firing a powershell on the `setup` folder and running `pip install -r .\requirements.txt`) run the **play_no_install.bat**, if you wish to install **Flash**, **Python** and the server dependencies, run **play.bat** and it'll installs everything.
+
 ## On archives and accessibility to digital heritage
 - [Exemption to PCCPSACT](https://www.federalregister.gov/documents/2018/10/26/2018-23241/exemption-to-prohibition-on-circumvention-of-copyright-protection-systems-for-access-control), exemptions to the provision of the Digital Millennium Copyright Act (“DMCA”). 
 - [EFGAMP](https://efgamp.eu/), the European Federation of Video Game Archives, Museums and Preservation projects.
