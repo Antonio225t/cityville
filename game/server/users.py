@@ -819,18 +819,18 @@ def acquirePermit(userId,params):
     
 def getExpansionData(index):
     print("getExpansionData")
-    expansions = settings['expansions']['expansion']
+    expansions = settings['expansionRequirements']["expansionGates"][0]["expansions"]['expansion'] # TODO: Understand how this works
     for expansion in expansions:
         if expansion['@num'] == 'MAX':
-            permits = int(expansion['@permits'])
-            cash = int(expansion['@cost'])
+            permits = int(expansion['@permits2'])
+            cash = int(expansion['@cost2'])
             multiplier = float(expansion['@goldMultiplier'])
             return permits,cash,multiplier
         else:
             num = int(expansion['@num'])
             if num == index:
-                permits = int(expansion['@permits'])
-                cash = int(expansion['@cost'])
+                permits = int(expansion['@permits2'])
+                cash = int(expansion['@cost2'])
                 multiplier = float(expansion['@goldMultiplier'])
                 return permits,cash,multiplier
                 

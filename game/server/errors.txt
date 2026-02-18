@@ -1,0 +1,336 @@
+
+
+
+
+[1770244842.17] Error occurred on processRequest:
+
+Request:
+{'sequence': 7, 'params': ['startContract', {'plantTime': 1770244841924.808, 'state': 'planted', 'components': {}, 'direction': 2, 'buildTime': 1770070641413.385, 'deleted': False, 'tempId': -1, 'id': 59, 'contractName': 'plot_strawberries', 'position': {'x': 0, 'y': 23, 'z': 0}, 'itemName': 'plot_crop', 'contractType': 'plot_contract', 'className': 'Plot'}, 1770244841.0, []], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1770244841900.808, 'functionName': 'WorldService.performAction', 'footer': '', 'enqueueTime': 1770244841.900808, 'state': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 123, in processRequest
+    data = users.performAction(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 497, in performAction
+    no_u
+NameError: name 'no_u' is not defined
+
+
+
+
+[1770244842.284069] Error occurred on processRequest:
+
+Request:
+{'sequence': 7, 'params': ['startContract', {'plantTime': 1770244841924.808, 'state': 'planted', 'components': {}, 'direction': 2, 'buildTime': 1770070641413.385, 'deleted': False, 'tempId': -1, 'id': 59, 'contractName': 'plot_strawberries', 'position': {'x': 0, 'y': 23, 'z': 0}, 'itemName': 'plot_crop', 'contractType': 'plot_contract', 'className': 'Plot'}, 1770244841.0, []], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1770244841900.808, 'functionName': 'WorldService.performAction', 'footer': '', 'enqueueTime': 1770244841.900808, 'state': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 123, in processRequest
+    data = users.performAction(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 497, in performAction
+    no_u
+NameError: name 'no_u' is not defined
+
+
+
+
+[1770244842.39881] Error occurred on processRequest:
+
+Request:
+{'sequence': 7, 'params': ['startContract', {'plantTime': 1770244841924.808, 'state': 'planted', 'components': {}, 'direction': 2, 'buildTime': 1770070641413.385, 'deleted': False, 'tempId': -1, 'id': 59, 'contractName': 'plot_strawberries', 'position': {'x': 0, 'y': 23, 'z': 0}, 'itemName': 'plot_crop', 'contractType': 'plot_contract', 'className': 'Plot'}, 1770244841.0, []], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1770244841900.808, 'functionName': 'WorldService.performAction', 'footer': '', 'enqueueTime': 1770244841.900808, 'state': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 123, in processRequest
+    data = users.performAction(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 497, in performAction
+    no_u
+NameError: name 'no_u' is not defined
+
+
+
+
+[1770244894.962898] Error occurred on processRequest:
+
+Request:
+{'sequence': 3, 'params': ['startContract', {'plantTime': 1770244894874.021, 'state': 'planted', 'components': {}, 'direction': 2, 'buildTime': 1770070641413.385, 'deleted': False, 'tempId': -1, 'id': 59, 'contractName': 'plot_strawberries', 'position': {'x': 0, 'y': 23, 'z': 0}, 'itemName': 'plot_crop', 'contractType': 'plot_contract', 'className': 'Plot'}, 1770244894.0, []], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1770244894851.021, 'functionName': 'WorldService.performAction', 'footer': '', 'enqueueTime': 1770244894.851021, 'state': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 123, in processRequest
+    data = users.performAction(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 497, in performAction
+    no_u
+NameError: name 'no_u' is not defined
+
+
+
+
+[1770244895.084897] Error occurred on processRequest:
+
+Request:
+{'sequence': 3, 'params': ['startContract', {'plantTime': 1770244894874.021, 'state': 'planted', 'components': {}, 'direction': 2, 'buildTime': 1770070641413.385, 'deleted': False, 'tempId': -1, 'id': 59, 'contractName': 'plot_strawberries', 'position': {'x': 0, 'y': 23, 'z': 0}, 'itemName': 'plot_crop', 'contractType': 'plot_contract', 'className': 'Plot'}, 1770244894.0, []], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1770244894851.021, 'functionName': 'WorldService.performAction', 'footer': '', 'enqueueTime': 1770244894.851021, 'state': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 123, in processRequest
+    data = users.performAction(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 497, in performAction
+    no_u
+NameError: name 'no_u' is not defined
+
+
+
+
+[1770244895.166949] Error occurred on processRequest:
+
+Request:
+{'sequence': 3, 'params': ['startContract', {'plantTime': 1770244894874.021, 'state': 'planted', 'components': {}, 'direction': 2, 'buildTime': 1770070641413.385, 'deleted': False, 'tempId': -1, 'id': 59, 'contractName': 'plot_strawberries', 'position': {'x': 0, 'y': 23, 'z': 0}, 'itemName': 'plot_crop', 'contractType': 'plot_contract', 'className': 'Plot'}, 1770244894.0, []], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1770244894851.021, 'functionName': 'WorldService.performAction', 'footer': '', 'enqueueTime': 1770244894.851021, 'state': {'cash': 4000, 'xp': 268, 'energy': 19, 'gold': 3337}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 123, in processRequest
+    data = users.performAction(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 497, in performAction
+    no_u
+NameError: name 'no_u' is not defined
+
+
+
+
+[1771379144.474663] Error occurred on processRequest:
+
+Request:
+{'sequence': 14, 'stamp': 1771379144148.1401, 'params': ['expand_12_12', {'x': -12, 'y': 36}, [], [], False], 'functionName': 'FarmService.expandCity', 'footer': '{"leaderboards":["FastestGrowing"]}', 'enqueueTime': 1771379143.2361403, 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 6981, 'xp': 1268, 'energy': 23, 'gold': 17317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'state': {'cash': 6981, 'xp': 1268, 'energy': 23, 'gold': 17317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 195, in processRequest
+    data = users.expandCity(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 138, in expandCity
+    permits,_,multiplier = getExpansionData(userInfo['player']['expansionsPurchased'])
+                           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 822, in getExpansionData
+    expansions = settings['expansions']['expansion']
+                 ~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'expansions'
+
+
+
+
+[1771379144.643153] Error occurred on processRequest:
+
+Request:
+{'sequence': 14, 'stamp': 1771379144148.1401, 'params': ['expand_12_12', {'x': -12, 'y': 36}, [], [], False], 'functionName': 'FarmService.expandCity', 'footer': '{"leaderboards":["FastestGrowing"]}', 'enqueueTime': 1771379143.2361403, 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 6981, 'xp': 1268, 'energy': 23, 'gold': 17317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'state': {'cash': 6981, 'xp': 1268, 'energy': 23, 'gold': 17317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 195, in processRequest
+    data = users.expandCity(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 138, in expandCity
+    permits,_,multiplier = getExpansionData(userInfo['player']['expansionsPurchased'])
+                           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 822, in getExpansionData
+    expansions = settings['expansions']['expansion']
+                 ~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'expansions'
+
+
+
+
+[1771379144.780249] Error occurred on processRequest:
+
+Request:
+{'sequence': 14, 'stamp': 1771379144148.1401, 'params': ['expand_12_12', {'x': -12, 'y': 36}, [], [], False], 'functionName': 'FarmService.expandCity', 'footer': '{"leaderboards":["FastestGrowing"]}', 'enqueueTime': 1771379143.2361403, 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 6981, 'xp': 1268, 'energy': 23, 'gold': 17317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'state': {'cash': 6981, 'xp': 1268, 'energy': 23, 'gold': 17317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 195, in processRequest
+    data = users.expandCity(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 138, in expandCity
+    permits,_,multiplier = getExpansionData(userInfo['player']['expansionsPurchased'])
+                           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 822, in getExpansionData
+    expansions = settings['expansions']['expansion']
+                 ~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'expansions'
+
+
+
+
+[1771379945.792072] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'stamp': 1771379945544.984, 'params': ['expand_12_12', 1], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771379943.901984, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits'])
+                  ~~~~~~~~~^^^^^^^^^^^^
+KeyError: '@permits'
+
+
+
+
+[1771379949.147507] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'stamp': 1771379945544.984, 'params': ['expand_12_12', 1], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771379943.901984, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits'])
+                  ~~~~~~~~~^^^^^^^^^^^^
+KeyError: '@permits'
+
+
+
+
+[1771379949.385809] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'stamp': 1771379945544.984, 'params': ['expand_12_12', 1], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771379943.901984, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits'])
+                  ~~~~~~~~~^^^^^^^^^^^^
+KeyError: '@permits'
+
+
+
+
+[1771380163.783646] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'params': ['expand_12_12', 1], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1771380163534.642, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771380157.5646422, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits1'])
+                  ~~~~~~~~~^^^^^^^^^^^^^
+KeyError: '@permits1'
+
+
+
+
+[1771380163.895878] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'params': ['expand_12_12', 1], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1771380163534.642, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771380157.5646422, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits1'])
+                  ~~~~~~~~~^^^^^^^^^^^^^
+KeyError: '@permits1'
+
+
+
+
+[1771380163.997187] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'params': ['expand_12_12', 1], 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'stamp': 1771380163534.642, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771380157.5646422, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits1'])
+                  ~~~~~~~~~^^^^^^^^^^^^^
+KeyError: '@permits1'
+
+
+
+
+[1771380243.109478] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'params': ['expand_12_12', 1], 'stamp': 1771380242952.216, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771380237.292244, 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits2'])
+                  ~~~~~~~~~^^^^^^^^^^^^^
+KeyError: '@permits1'
+
+
+
+
+[1771380243.24311] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'params': ['expand_12_12', 1], 'stamp': 1771380242952.216, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771380237.292244, 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits2'])
+                  ~~~~~~~~~^^^^^^^^^^^^^
+KeyError: '@permits1'
+
+
+
+
+[1771380243.357979] Error occurred on processRequest:
+
+Request:
+{'sequence': 10, 'params': ['expand_12_12', 1], 'stamp': 1771380242952.216, 'functionName': 'UserService.acquirePermit', 'footer': '', 'enqueueTime': 1771380237.292244, 'transaction': {'mustGoLastInBatch': False, 'worldName': 'world_main', 'ownerId': '333', 'worldDependent': True, 'ClientState': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}, 'canPerform': True, 'mustGoFirstInBatch': False, 'dispatchEnabled': True}, 'state': {'cash': 7000, 'xp': 1268, 'energy': 23, 'gold': 33317}}
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\app.py", line 202, in processRequest
+    data = users.acquirePermit(userId,req.params)
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 813, in acquirePermit
+    permits,cash,_ = getExpansionData(nextExpansion)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Quickemu\Desktop\CityVille\game\server\users.py", line 832, in getExpansionData
+    permits = int(expansion['@permits2'])
+                  ~~~~~~~~~^^^^^^^^^^^^^
+KeyError: '@permits1'

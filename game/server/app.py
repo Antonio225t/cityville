@@ -1,16 +1,20 @@
 from flask import Flask, request, send_file, Response
 from pyamf import remoting
 from datetime import datetime
+from threading import Thread
+import traceback
 import pyamf
 import json
+import zlib
 import os.path
 
 import users
 import quests
 
 
-
 writeStats = False
+
+
 CLIENT_DIR = '../client'
 
 def timestamp():
@@ -22,6 +26,20 @@ quests.init()
 
 app = Flask(__name__)
 
+
+# with open("../client/_settings.amf.z", "rb") as f:
+#     amf = pyamf.decode(zlib.decompress(f.read()), encoding=pyamf.AMF3)
+#     with open("settings2.json", "w", encoding="UTF-8") as f:
+#         as_obj = json.dumps(amf.readElement())
+#         f.write(as_obj)
+
+# with open("settings.json", "r", encoding="UTF-8") as f:
+    # as_obj = pyamf.ASObject(json.loads(f.read()))
+    # amf = pyamf.encode(as_obj, encoding=pyamf.AMF3).read()
+    # with open("../client/settings.amf", "wb") as f:
+        # f.write(amf)
+    # with open("../client/settings.amf.z", "wb") as f:
+        # f.write(zlib.compress(amf))
 
 @app.route('/')
 def hello():
@@ -54,12 +72,39 @@ def post_data_services():
 
 @app.route('/flashservices/gateway.php', methods=['POST'])
 def post_gateway():
-    resp_msg = remoting.decode(request.data)        
-    responses = []
+    print(request.data)
+    resp_msg = remoting.decode(request.data)
     userId = resp_msg.bodies[0][1].body[0]['zyUid']
     
-    for req in resp_msg.bodies[0][1].body[1]:        
+    responses = []
+    for req in resp_msg.bodies[0][1].body[1]:
         print(req)
+        res = processRequest(req, userId)
+        if type(res) != list:
+            responses = res
+            break
+        
+        responses.extend(res)
+        
+    if type(responses) != list:
+        emsg = responses
+    else:
+        emsg = {
+            "serverTime": timestamp(),
+            "errorType": 0,
+            "data": responses
+        }
+
+    req = remoting.Response(emsg)
+    ev = remoting.Envelope(pyamf.AMF0)
+    ev[resp_msg.bodies[0][0]] = req
+    ret_body = remoting.encode(ev, strict=True, logger=True).getvalue()  # .read()
+    return Response(ret_body, mimetype='application/x-amf')
+
+
+def processRequest(req, userId):
+    responses = []
+    try:
         match req.functionName:
             case 'UserService.initUser':
                 responses.append(userResponse(userId))
@@ -199,21 +244,20 @@ def post_gateway():
                 responses.append(dummy_response(userId))
             
             case _:
-                print("Unknown request:")
-                print(req)
+                print("Unknown request!")
                 responses.append(dummy_response(userId))
+    except Exception:
+        trace = traceback.format_exc()
         
-    emsg = {
-        "serverTime": timestamp(),
-        "errorType": 0,
-        "data": responses
-    }
-
-    req = remoting.Response(emsg)
-    ev = remoting.Envelope(pyamf.AMF0)
-    ev[resp_msg.bodies[0][0]] = req
-    ret_body = remoting.encode(ev, strict=True, logger=True).getvalue()  # .read()
-    return Response(ret_body, mimetype='application/x-amf')
+        print("Error occurred!")
+        print(trace)
+        
+        with open("errors.txt", "a+") as f:
+            f.write(f"\n\n\n\n[{timestamp()}] Error occurred on processRequest:\n\nRequest:\n{req}\n\nTraceback:\n{trace}")
+        
+        return errorResponse(f"Server error!\n{trace}")
+    
+    return responses
 
 @app.route("/snapi/<path:path>")
 def snapi(path):
@@ -310,3 +354,9 @@ def initUser(userId):
     user = users.getUser(userId)
     return user
 
+
+def errorResponse(msg):
+    return {"errorType": 2, "errorData": msg, "serverTime": timestamp()}
+
+
+app.run("127.0.0.1", port=5000)
