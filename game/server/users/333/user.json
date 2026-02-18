@@ -1,5 +1,5 @@
 {
-    "idCounter": 61,
+    "idCounter": 62,
     "storageMax": 715,
     "featureData": {
         "cityAtNight": {
@@ -12,7 +12,10 @@
             "enabled": false
         },
         "incentivizedExpansions": {
-            "enabled": false
+            "expansions": {},
+            "cellToId": {},
+            "parentExpansions": {},
+            "failureCount": {}
         },
         "helperClicks": {
             "enabled": false
@@ -30,7 +33,10 @@
             "enabled": false
         },
         "partnerBuild": {
-            "enabled": false
+            "roadside": {},
+            "pumpkin": {},
+            "pumpkinPartnerBuild": {},
+            "snowman": {}
         },
         "animalRescue": {},
         "copsNBandits": {},
@@ -78,28 +84,28 @@
                 "recentEvents": {}
             },
             "playerNews": [],
-            "gold": 3437,
-            "cash": 4000,
-            "level": 8,
+            "gold": 13169,
+            "cash": 6996,
+            "level": 18,
             "lightLevel": 0,
-            "xp": 262,
-            "energy": 16,
-            "energyMax": 19,
+            "xp": 1270,
+            "energy": 24,
+            "energyMax": 25,
             "paidEnergy": 0,
-            "lastEnergyCheck": 1770075900,
+            "lastEnergyCheck": 1771380300,
             "m_energyModifiers": [],
             "neighbors": [],
             "maxNeighbors": 10,
             "nonSNNeighbors": [],
             "commodities": {
                 "storage": {
-                    "goods": 130
+                    "goods": 190
                 }
             },
             "additionalWareHouseSlots": 0,
             "wishlist": [],
             "seenFlags": {},
-            "expansionsPurchased": 0,
+            "expansionsPurchased": 1,
             "inventory": {
                 "count": 0,
                 "items": {}
@@ -113,7 +119,7 @@
                 "res_countryhome": 1
             },
             "npc_cloud_visible": true,
-            "rollCounter": 52,
+            "rollCounter": 72,
             "rollCounterMap": {},
             "socialXp": 0,
             "socialLevel": 1,
@@ -161,6 +167,12 @@
                     "y": 0,
                     "width": 36,
                     "height": 36
+                },
+                {
+                    "x": -12,
+                    "y": 36,
+                    "width": 12,
+                    "height": 12
                 }
             ],
             "sizeX": 36,
@@ -171,10 +183,10 @@
                         "citizen": {
                             "capacity": 50,
                             "id": "citizen",
-                            "maximum": 120,
-                            "minimum": 70,
+                            "maximum": 140,
+                            "minimum": 80,
                             "potential": 0,
-                            "yield": 70
+                            "yield": 80
                         }
                     }
                 },
@@ -206,21 +218,21 @@
                     "id": 2
                 },
                 {
-                    "plantTime": 1770068470063.92,
-                    "state": "planted",
+                    "plantTime": 1770144579006.4758,
+                    "itemName": "plot_crop",
                     "components": {},
-                    "direction": 0,
+                    "state": "planted",
                     "buildTime": NaN,
                     "deleted": false,
                     "tempId": NaN,
                     "id": 3,
-                    "contractName": "plot_strawberries",
+                    "direction": 0,
                     "position": {
                         "x": -2,
                         "y": 25,
                         "z": 0
                     },
-                    "itemName": "plot_crop",
+                    "contractName": "plot_strawberries",
                     "contractType": "plot_contract",
                     "className": "Plot"
                 },
@@ -237,21 +249,21 @@
                     "id": 4
                 },
                 {
-                    "plantTime": 1770068469698.345,
-                    "state": "planted",
+                    "plantTime": 1770144578574.084,
+                    "itemName": "plot_crop",
                     "components": {},
-                    "direction": 0,
+                    "state": "planted",
                     "buildTime": NaN,
                     "deleted": false,
                     "tempId": NaN,
                     "id": 5,
-                    "contractName": "plot_strawberries",
+                    "direction": 0,
                     "position": {
                         "x": 0,
                         "y": 25,
                         "z": 0
                     },
-                    "itemName": "plot_crop",
+                    "contractName": "plot_strawberries",
                     "contractType": "plot_contract",
                     "className": "Plot"
                 },
@@ -985,38 +997,42 @@
                     "plantTime": 1770070583000
                 },
                 {
-                    "deleted": false,
-                    "plantTime": 1770070638445.385,
+                    "plantTime": 1770245041961.995,
                     "itemName": "plot_crop",
+                    "components": {},
+                    "state": "planted",
+                    "buildTime": 1770070638445.385,
+                    "deleted": false,
                     "tempId": -1,
                     "id": 58,
-                    "state": "plowed",
+                    "direction": 0,
                     "position": {
                         "x": -2,
                         "y": 23,
                         "z": 0
                     },
-                    "direction": 0,
-                    "className": "Plot",
-                    "components": {},
-                    "buildTime": 1770070638445.385
+                    "contractName": "plot_strawberries",
+                    "contractType": "plot_contract",
+                    "className": "Plot"
                 },
                 {
-                    "deleted": false,
-                    "plantTime": 1770070641413.385,
+                    "plantTime": 1770245041408.5159,
                     "itemName": "plot_crop",
+                    "components": {},
+                    "state": "planted",
+                    "buildTime": 1770070641413.385,
+                    "deleted": false,
                     "tempId": -1,
                     "id": 59,
-                    "state": "plowed",
+                    "direction": 2,
                     "position": {
                         "x": 0,
                         "y": 23,
                         "z": 0
                     },
-                    "direction": 2,
-                    "className": "Plot",
-                    "components": {},
-                    "buildTime": 1770070641413.385
+                    "contractName": "plot_strawberries",
+                    "contractType": "plot_contract",
+                    "className": "Plot"
                 },
                 {
                     "itemName": "res_countryhome",
@@ -1031,6 +1047,20 @@
                     "state": "planted",
                     "currentPopulation": 30,
                     "plantTime": 1770076000000
+                },
+                {
+                    "itemName": "res_cottage3",
+                    "className": "Residence",
+                    "id": 61,
+                    "position": {
+                        "x": -11,
+                        "y": 39,
+                        "z": 0
+                    },
+                    "direction": 2,
+                    "state": "planted",
+                    "currentPopulation": 10,
+                    "plantTime": 1771380345000
                 }
             ]
         }
